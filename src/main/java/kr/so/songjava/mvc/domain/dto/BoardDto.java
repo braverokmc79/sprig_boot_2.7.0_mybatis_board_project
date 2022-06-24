@@ -1,15 +1,12 @@
-package kr.so.songjava.mvc.domain;
-
-import java.util.Date;
+package kr.so.songjava.mvc.domain.dto;
 
 import lombok.Data;
 
 @Data
-public class Board {
+public class BoardDto {
 	private int boardSeq;
 	private String title;
 	private String contents;
-	private Date regDate;
 }
 
   

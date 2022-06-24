@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.so.songjava.mvc.domain.Board;
+import kr.so.songjava.mvc.domain.dto.BoardDto;
+import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.repository.BoardRepository;
 
 /** 게시판 서비스 */
@@ -26,18 +27,18 @@ public class BoardSevice {
 	}
 
 	/** 게시판 저장 */
-	public int save(Board parameter) {
-		Board board =boardRepository.get(parameter.getBoardSeq());
+	public int save(BoardDto boardDto) {
+		Board board =boardRepository.get(boardDto.getBoardSeq());
 		if(board==null) {
-			boardRepository.save(parameter);
+			boardRepository.save(boardDto);
 		}else{
-			boardRepository.update(parameter);
+			boardRepository.update(boardDto);
 		}
-		return parameter.getBoardSeq();
+		return boardDto.getBoardSeq();
 	}
 	
 	/** 게시판 업데이트 */
-	public int update(Board board) {
+	public int update(BoardDto board) {
 		return boardRepository.update(board);
 	}
 	

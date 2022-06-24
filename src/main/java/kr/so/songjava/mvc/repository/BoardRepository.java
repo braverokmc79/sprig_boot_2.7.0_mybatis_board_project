@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import kr.so.songjava.mvc.domain.Board;
+import kr.so.songjava.mvc.domain.dto.BoardDto;
+import kr.so.songjava.mvc.domain.entity.Board;
 
 /** 게시판 Repository */
 @Repository
@@ -14,9 +15,9 @@ public interface BoardRepository {
 	
 	public Board get(int boardSeq);
 	
-	public int save(Board board);
+	public int save(BoardDto boardDto);
 	
-	public int update(Board board);
+	public int update(BoardDto boardDto);
 	
 	public int delete(int boardSeq);
 		

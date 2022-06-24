@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.so.songjava.mvc.repository.BoardRepository">
   
-  <select id="getList" 	parameterType="kr.so.songjava.mvc.domain.Board" resultType="kr.so.songjava.mvc.domain.Board">
+  <select id="getList" 	parameterType="kr.so.songjava.mvc.domain.entity.Board" resultType="kr.so.songjava.mvc.domain.entity.Board">
     SELECT
     	 B.BOARD_SEQ,
     	 B.TITLE,
@@ -15,7 +15,7 @@
 
   
   
-   <select id="get"  resultType="kr.so.songjava.mvc.domain.Board" >
+   <select id="get"  resultType="kr.so.songjava.mvc.domain.entity.Board" >
         SELECT
     	 B.BOARD_SEQ,
     	 B.TITLE,
@@ -27,14 +27,14 @@
   
   
   
-  <insert id="save" parameterType="kr.so.songjava.mvc.domain.Board" useGeneratedKeys="true"  keyProperty="boardSeq">
+  <insert id="save" parameterType="kr.so.songjava.mvc.domain.dto.BoardDto" useGeneratedKeys="true"  keyProperty="boardSeq">
   INSERT INTO T_BOARD  ( TITLE, CONTENTS, REG_DATE )
   
   VALUES( #{title}, #{contents}, NOW())
   </insert>
   
   
-  <update id="update">
+  <update id="update" parameterType="kr.so.songjava.mvc.domain.dto.BoardDto">
   	UPDATE T_BOARD
   		SET
   			TITLE=#{title},
