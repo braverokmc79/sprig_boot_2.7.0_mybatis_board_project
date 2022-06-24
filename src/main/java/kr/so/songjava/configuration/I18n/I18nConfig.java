@@ -11,8 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
+/**
+ * 다국어 처리 
+ */
 @Configuration
-public class I18nConfig implements WebMvcConfigurer {
+public class I18nConfig  {
 
 	/** 스프링이 클라이언트의 언어,국가 정보를 인식하게 하는 메소드  여기서는 쿠키의 값을 저장하여 사용
 	 * 
@@ -29,18 +32,7 @@ public class I18nConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-    /**
-     * Locale 값이 변경되면 인터셉터가 동작한다.
-	  url의 query parameter에 지정한 값이 들어올 때 동작한다.
- 	  ex) http://localhost:8080?lang=ko
-     * @return
-     */
-    @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor() {
-        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
-        interceptor.setParamName("lang");
-        return interceptor;
-    }
+
 
     /** 스프링이 작성한 언어 리소스들을 사용할 수 있게 등록,설정 */
     @Bean
@@ -57,14 +49,6 @@ public class I18nConfig implements WebMvcConfigurer {
         return messageSource;
     }
 
-    /**
-     * 인터셉터 등록
-		LocaleChangeInterceptor 를 스프링 컨테이너에 등록한다.
-		WebMvcConfigurer 를 상속받고 addInterceptors를 오버라이딩 한다.
-     */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(localeChangeInterceptor());
-    }
+
     
 }

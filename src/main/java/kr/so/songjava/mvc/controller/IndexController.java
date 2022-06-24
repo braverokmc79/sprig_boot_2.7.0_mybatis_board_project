@@ -25,7 +25,6 @@ public class IndexController {
 	 private MessageSource messageSource;
 	 
 	@GetMapping({"","/"})
-	@ResponseBody
 	@ApiOperation(value="인덱스화면", notes="인덱스 홈 화면을 조회할수 있습니다.")
 	public String index(){				
 		return "index";
@@ -52,11 +51,6 @@ public class IndexController {
 		String message2=messageSource.getMessage("testName", new String[]{name ,age}, LocaleContextHolder.getLocale());
 		return message2;
 	}
-	
-	
-	
-	
-	
 	
 	
 }

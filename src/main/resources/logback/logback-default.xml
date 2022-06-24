@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+ 
+      <!-- 1. 유형 - 콘솔로 로그를 남김 색깔 적용 -->
+     <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+              <withJansi>true</withJansi>
+              <encoder>
+                       <charset>UTF-8</charset>
+                       <!-- 로그 메시지 패턴 -->
+                       <Pattern>
+                               %d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
+                       </Pattern>
+              </encoder>
+     </appender>
+         
+      <!-- 2.유형 : 파일로 로그를 남김 -->      
+	<appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<prudent>true</prudent>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/applicatoin.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>error</level>
+		</filter>
+ 
+		<encoder>
+			<pattern>%d{yyyy:MM:dd HH:mm:ss.SSS} %-5level --- [%thread] %logger{35} : %msg %n</pattern>
+		</encoder>
+	</appender>
+
+
+        <!-- 3.유형 : 파일로 로그를 남김 -->
+       <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- <file>c:\LogExample\logexample2.log</file> -->
+                <file>logs/logexample2.log</file>
+                <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                         <Pattern>
+                                 %d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n
+                         </Pattern>
+                </encoder>
+
+                <!-- 로그를 남기는 파일의 용량이 50KB가 넘으면 이를 압축 파일로 만들고 새로 로그 파일로 만들라는 정책 -->
+                <triggeringPolicy  class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+                         <MaxFileSize>50KB</MaxFileSize>
+                </triggeringPolicy>
+
+
+                <!-- 파일을 덮어쓰는 정책 -->
+                 <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+<!--                   <FileNamePattern>C:\LogExample\logexample2.%i.log.zip</FileNamePattern> -->
+                         <FileNamePattern>logs/zip/logexample2.%i.log.zip</FileNamePattern>
+                         <!--
+                             MinIndex가 1이고, MaxIndex가 10이므로, 위의 파일 이름 패턴에 따라 아래의 로그 파일이 생길 것이다.
+                             logexample2.1.log.zip   logexample2.2.log.zip  .... logexample2.10.log.zip
+                             이 상태에서 또 10KB가 넘으면 logexample2.1.log.zip이 된다.
+                         -->
+                         <MinIndex>1</MinIndex>
+                         <MaxIndex>10</MaxIndex>
+                </rollingPolicy>
+       </appender>
+	
+	
+ 
+	<logger name="org.springframework.web" level="info"/>
+	<logger name="org.thymeleaf" level="info"/>
+	<logger name="org.hibernate.SQL" level="info"/>
+	<logger name="org.quartz.core" level="info"/>
+	<logger name="org.h2.server.web" level="info"/>
+	<logger name="org.mariadb.jdbc" level="info"/>
+	<logger name="org.mysql.jdbc" level="info"/>
+
+	<!-- log4jdbc 옵션 설정 -->
+	<logger name="jdbc" level="OFF" /> <!-- 커넥션 open close 이벤트를 로그로 남긴다. -->
+	<logger name="jdbc.connection" level="OFF" /> <!-- SQL문만을 로그로 남기며, PreparedStatement일 경우 관련된 argument 값으로 대체된 SQL문이 보여진다. -->
+	<logger name="jdbc.sqlonly" level="OFF" /> <!-- SQL문과 해당 SQL을 실행시키는데 수행된 시간 정보(milliseconds)를 포함한다. -->
+	<logger name="jdbc.sqltiming" level="DEBUG" /> <!-- ResultSet을 제외한 모든 JDBC 호출 정보를 로그로 남긴다. 많은 양의 로그가 생성되므로 특별히 JDBC 문제를 추적해야 할 필요가 있는 경우를 제외하고는 사용을 권장하지 않는다. -->
+	<logger name="jdbc.audit" level="OFF" /> <!-- ResultSet을 포함한 모든 JDBC 호출 정보를 로그로 남기므로 매우 방대한 양의 로그가 생성된다. -->
+	<logger name="jdbc.resultset" level="OFF" /> <!-- SQL 결과 조회된 데이터의 table을 로그로 남긴다. -->
+	<logger name="jdbc.resultsettable" level="info" />
+ 
+ 	<logger name="springfox" level="WARN"/>
+ 	<logger name="org.hibernate" level="WARN"/>
+ 	<logger name="org.apache" level="WARN"/>
+ 	<logger name="org.apache.http.imp.conn" level="WARN"/>
+ 
+ 
+ 
+ 	<!-- root는 글로벌 로거를 의미하며, 위의 logger에 해당하지 않으면 root 로거가 실행된다. -->
+	<root level="info">
+		<!-- 3.유형 로그 사용 -->
+		<appender-ref ref="fileAppender" />
+	</root>
+</configuration>
