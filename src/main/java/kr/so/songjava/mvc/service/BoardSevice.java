@@ -43,8 +43,8 @@ public class BoardSevice {
 	}
 	
 	/** 게시판 삭제 */
-	public int delete(int boardSeq) {
-		return boardRepository.delete(boardSeq);
+	public Boolean delete(int boardSeq) {
+		return boardRepository.delete(boardSeq)==1?true:false;
 	}
 	
 	

@@ -14,6 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import kr.so.songjava.configuration.http.BaseResponse;
 import kr.so.songjava.mvc.domain.dto.BoardDto;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.service.BoardSevice;
@@ -25,14 +26,15 @@ public class BoardController {
 
 	
 	@Autowired
-	private BoardSevice boardSevice;
+	private BoardSevice boardService;
 
 	/** 게시판 목록리턴 */
 	@GetMapping("/")
 	@ApiOperation(value="목록조회", notes="게시물 번호에 해당하는 목록정보를 조회할수 있습니다.")
-	public List<Board> getList(){
-		return boardSevice.getList();
+	public BaseResponse<List<Board>> getList(){
+		return new BaseResponse<List<Board>>(boardService.getList());
 	}
+	
 	
 	/** 게시판 상세보기 */
 	@GetMapping("/{boardSeq}")
@@ -40,8 +42,8 @@ public class BoardController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(name="boardSeq", value="게시물 번호", example = "1")
 	})
-	public Board get(@PathVariable int boardSeq) {		
-		return boardSevice.get(boardSeq);
+	public BaseResponse<Board> get(@PathVariable int boardSeq) {		
+		return new BaseResponse<Board>(boardService.get(boardSeq));
 	}
 	
 	
@@ -54,8 +56,9 @@ public class BoardController {
 		@ApiImplicitParam(name="title", value="제목", example = "spring"),
 		@ApiImplicitParam(name="contents", value="내용", example="spring 강좌"),
 	})
-	public Integer save(BoardDto boardDto) {
-		return boardSevice.save(boardDto);
+	public BaseResponse<Integer> save(BoardDto boardDto) {
+		boardService.save(boardDto);
+		return new BaseResponse<Integer>(boardDto.getBoardSeq());
 	}
 	
 	
@@ -66,8 +69,8 @@ public class BoardController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(name="boardSeq", value="게시물 번호", example = "1")
 	})
-	public int delete(@PathVariable int boardSeq) {
-		return boardSevice.delete(boardSeq);
+	public BaseResponse<Boolean>  delete(@PathVariable int boardSeq) {
+		return  new BaseResponse<Boolean>(boardService.delete(boardSeq));
 	}
 	
 	
