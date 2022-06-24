@@ -8,3 +8,41 @@
 04:31:26.853 [restartedMain] INFO  k.s.s.ExampleSpringApplication - Started ExampleSpringApplication in 0.378 seconds (JVM running for 92.629)
 04:31:26.854 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 04:31:41.441 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+04:31:48.247 [restartedMain] INFO  k.s.s.ExampleSpringApplication - Starting ExampleSpringApplication using Java 11.0.12 on DESKTOP-22M8BH7 with PID 11128 (E:\Spring Boot\inflearn_study\song_java\target\classes started by supercom in E:\Spring Boot\inflearn_study\song_java)
+04:31:48.248 [restartedMain] INFO  k.s.s.ExampleSpringApplication - No active profile set, falling back to 1 default profile: "default"
+04:31:48.278 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+04:31:48.278 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+04:31:49.182 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+04:31:49.247 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 969 ms
+04:31:49.702 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+04:31:49.862 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+04:31:49.929 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+04:31:49.933 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+04:31:49.949 [http-nio-8080-exec-1] INFO  k.s.s.c.h.BaseHandlerInterceptor - 
+
+
+*** [preHandle] URI : /board/8 - 시작 
+04:31:49.971 [http-nio-8080-exec-1] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+04:31:50.012 [restartedMain] INFO  k.s.s.ExampleSpringApplication - Started ExampleSpringApplication in 2.113 seconds (JVM running for 4.238)
+04:31:50.090 [http-nio-8080-exec-1] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+04:31:50.112 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+    	 B.BOARD_SEQ,
+    	 B.TITLE,
+    	 B.CONTENTS,
+    	 B.REG_DATE    	 
+   FROM T_BOARD B 
+   WHERE B.BOARD_SEQ =8
+ {executed in 7 msec}
+04:31:50.121 [http-nio-8080-exec-1] INFO  j.resultsettable - 
+|----------|-------|-----------|----------------------|
+|board_seq |title  |contents   |reg_date              |
+|----------|-------|-----------|----------------------|
+|8         |ewresa |2342343214 |2022-06-24 10:19:03.0 |
+|----------|-------|-----------|----------------------|
+
+04:31:50.154 [http-nio-8080-exec-1] INFO  k.s.s.c.h.BaseHandlerInterceptor - 
+***[postHandle] URI  : /board/8  - 종료 
+
+
+
