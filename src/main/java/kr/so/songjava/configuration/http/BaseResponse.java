@@ -15,11 +15,15 @@ public class BaseResponse<T> {
 	}
 	
 	public BaseResponse(String status, T data) {
-		if(status.equals("bad"))this.code=BaseResponseCode.ERROR;		
+		if(status.equals("error"))this.code=BaseResponseCode.ERROR;		
 		else this.code=BaseResponseCode.SUCCESS;
 		this.data=data;
 	}
 	
-
-	
+	public BaseResponse(String status, T data, String message) {
+		if(status.equals("error"))this.code=BaseResponseCode.ERROR;		
+		else this.code=BaseResponseCode.SUCCESS;
+		this.data=data;
+		this.message=message;
+	}
 }

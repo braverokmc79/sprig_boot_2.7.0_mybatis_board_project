@@ -22,14 +22,14 @@ import kr.so.songjava.mvc.service.BoardSevice;
 @RestController
 @RequestMapping("/board")
 @Api(tags="게시판 API")
-public class BoardController {
+public class BoardApiController {
 
 	
 	@Autowired
 	private BoardSevice boardService;
 
 	/** 게시판 목록리턴 */
-	@GetMapping("/")
+	@GetMapping({"","/"})
 	@ApiOperation(value="목록조회", notes="게시물 번호에 해당하는 목록정보를 조회할수 있습니다.")
 	public BaseResponse<List<Board>> getList(){
 		return new BaseResponse<List<Board>>(boardService.getList());
