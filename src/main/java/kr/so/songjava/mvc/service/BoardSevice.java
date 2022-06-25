@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import kr.so.songjava.configuration.BaseCodeLabelEnumJsonSerializer;
 import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.dto.BoardInsertDTO;
+import kr.so.songjava.mvc.domain.dto.BoardSearchParameter;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.domain.enums.BaseCodeLabelEnum;
 import kr.so.songjava.mvc.repository.BoardRepository;
@@ -27,8 +28,8 @@ public class BoardSevice {
 	private BoardRepository boardRepository;
 
 	/** 게시판 목록리턴 */
-	public List<BoardDTO> getList(BoardDTO boardDTO){
-		return boardRepository.getList(boardDTO);
+	public List<BoardDTO> getList(BoardSearchParameter boardSearchParameter){
+		return boardRepository.getList(boardSearchParameter);
 	}
 	
 	/** 게시판 상세보기 */

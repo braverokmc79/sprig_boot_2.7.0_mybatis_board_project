@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.so.songjava.mvc.repository.BoardRepository">
   
-  <select id="getList" 	parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO" resultType="kr.so.songjava.mvc.domain.entity.Board">
+  <select id="getList" 	resultType="kr.so.songjava.mvc.domain.entity.Board">
     SELECT
     	 B.BOARD_SEQ,
     	 B.BOARD_TYPE,
@@ -14,6 +14,14 @@
    	 <if test="@org.apache.commons.lang3.StringUtils@isNotEmpty(keyword)">
    	 	AND B.TITLE LIKE CONCAT('%',  #{keyword}, '%')
    	 </if>
+   	 
+   	 <if test="@org.apache.commons.lang3.ObjectUtils@isNotEmpty(boardTypes)">
+   	 	AND B.BOARD_TYPE IN (
+   	 		<foreach collection="boardTypes" item="value" separator=",">
+   	 			#{value}
+   	 		</foreach>
+   	 	)
+   	 </if>   	 
    </where>   
    ORDER BY B.REG_DATE DESC     	
   </select>

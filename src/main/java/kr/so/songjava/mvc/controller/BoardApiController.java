@@ -20,6 +20,7 @@ import io.swagger.annotations.ApiParam;
 import kr.so.songjava.configuration.http.BaseResponse;
 import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.dto.BoardInsertDTO;
+import kr.so.songjava.mvc.domain.dto.BoardSearchParameter;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.service.BoardSevice;
 import lombok.extern.slf4j.Slf4j;
@@ -37,8 +38,8 @@ public class BoardApiController {
 	/** 게시판 목록리턴 */
 	@GetMapping({"","/"})
 	@ApiOperation(value="목록조회", notes="게시물 번호에 해당하는 목록정보를 조회할수 있습니다.")
-	public BaseResponse<List<BoardDTO>> getList(@ApiParam BoardDTO boardDTO){
-		return new BaseResponse<List<BoardDTO>>(boardService.getList(boardDTO));
+	public BaseResponse<List<BoardDTO>> getList(@ApiParam BoardSearchParameter boardSearchParameter){
+		return new BaseResponse<List<BoardDTO>>(boardService.getList(boardSearchParameter));
 	}
 	
 	
