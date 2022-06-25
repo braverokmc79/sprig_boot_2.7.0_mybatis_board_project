@@ -16,12 +16,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import kr.so.songjava.configuration.http.BaseResponse;
 import kr.so.songjava.mvc.domain.dto.BoardDTO;
+import kr.so.songjava.mvc.domain.dto.BoardInsertDTO;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.service.BoardSevice;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.utility.RandomString;
 
 @RestController
 @RequestMapping("/board")
@@ -36,8 +37,8 @@ public class BoardApiController {
 	/** 게시판 목록리턴 */
 	@GetMapping({"","/"})
 	@ApiOperation(value="목록조회", notes="게시물 번호에 해당하는 목록정보를 조회할수 있습니다.")
-	public BaseResponse<List<Board>> getList(){
-		return new BaseResponse<List<Board>>(boardService.getList());
+	public BaseResponse<List<BoardDTO>> getList(@ApiParam BoardDTO boardDTO){
+		return new BaseResponse<List<BoardDTO>>(boardService.getList(boardDTO));
 	}
 	
 	
@@ -57,13 +58,14 @@ public class BoardApiController {
 	@PutMapping("/save")
 	@ApiOperation(value="등록/수정처리", notes="신규 게시물 저장 및 기존 게시물 업데이트가 가능합니다.")
 	@ApiImplicitParams({
-		@ApiImplicitParam(name="boardSeq", value="게시물 번호", example = "1"),
+		@ApiImplicitParam(name="boardSeq", value="게시물번호", example = "1"),
+		@ApiImplicitParam(name="boardType", value="게시판종류", example = "NOTICE"),
 		@ApiImplicitParam(name="title", value="제목", example = "spring"),
 		@ApiImplicitParam(name="contents", value="내용", example="spring 강좌"),
 	})
-	public BaseResponse<Integer> save(BoardDTO boardDto) {
-		boardService.save(boardDto);
-		return new BaseResponse<Integer>(boardDto.getBoardSeq());
+	public BaseResponse<Integer> save(BoardInsertDTO boardInsertDTO) {
+		boardService.save(boardInsertDTO);
+		return new BaseResponse<Integer>(boardInsertDTO.getBoardSeq());
 	}
 	
 	
@@ -85,12 +87,12 @@ public class BoardApiController {
 	public BaseResponse<Boolean> saveList1(){
 		int count=0;
 		//테스트를 위한 랜덤 1000 건의 데이터를 생성
-		List<BoardDTO> list=new ArrayList<BoardDTO>();
+		List<BoardInsertDTO> list=new ArrayList<BoardInsertDTO>();
 		while(true){
 			count++;
 			String title=RandomStringUtils.randomAlphabetic(10);
 			String contents=RandomStringUtils.randomAlphabetic(10);
-			list.add(BoardDTO.builder().title(title).contents(contents).build());
+			list.add(BoardInsertDTO.builder().title(title).contents(contents).build());
 			if(count >1000) {
 				break;
 			}
@@ -112,12 +114,12 @@ public class BoardApiController {
 	public BaseResponse<Boolean> saveList2(){
 		int count=0;
 		//테스트를 위한 랜덤 1000 건의 데이터를 생성
-		List<BoardDTO> list=new ArrayList<BoardDTO>();
+		List<BoardInsertDTO> list=new ArrayList<BoardInsertDTO>();
 		while(true){
 			count++;
 			String title=RandomStringUtils.randomAlphabetic(10);
 			String contents=RandomStringUtils.randomAlphabetic(10);
-			list.add(BoardDTO.builder().title(title).contents(contents).build());
+			list.add(BoardInsertDTO.builder().title(title).contents(contents).build());
 			if(count >1000) {
 				break;
 			}

@@ -11,14 +11,14 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum BoardType {
-
-	NOTICE("NOTICE", "공지사항"),
-	FAQ("FAQ" ,"자주묻는질문"),
-	INQUIRY("INQUIRY" ,"1:1문의")
-	;
-		
-	//@JsonValue // 추가
-	private String code;
-	private String label;
-		
+ 
+    NOTICE("NOTICE", "공지사항"),
+    FAQ("FAQ" ,"자주묻는질문"),
+    INQUIRY("INQUIRY" ,"1:1문의")
+    ;
+         
+    //@JsonValue // 추가
+    private String code;
+    private String label;
+         
 }

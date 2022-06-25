@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import kr.so.songjava.configuration.BaseCodeLabelEnumJsonSerializer;
 import kr.so.songjava.mvc.domain.dto.BoardDTO;
+import kr.so.songjava.mvc.domain.dto.BoardInsertDTO;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.domain.enums.BaseCodeLabelEnum;
 import kr.so.songjava.mvc.repository.BoardRepository;
@@ -26,8 +27,8 @@ public class BoardSevice {
 	private BoardRepository boardRepository;
 
 	/** 게시판 목록리턴 */
-	public List<Board> getList(){
-		return boardRepository.getList();
+	public List<BoardDTO> getList(BoardDTO boardDTO){
+		return boardRepository.getList(boardDTO);
 	}
 	
 	/** 게시판 상세보기 */
@@ -36,19 +37,19 @@ public class BoardSevice {
 	}
 
 	/** 게시판 저장 */
-	public int save(BoardDTO boardDto) {
-		Board board =boardRepository.get(boardDto.getBoardSeq());
+	public int save(BoardInsertDTO boardInsertDTO) {
+		Board board =boardRepository.get(boardInsertDTO.getBoardSeq());
 		if(board==null) {
-			boardRepository.save(boardDto);
+			boardRepository.save(boardInsertDTO);
 		}else{
-			boardRepository.update(boardDto);
+			boardRepository.update(boardInsertDTO);
 		}
-		return boardDto.getBoardSeq();
+		return boardInsertDTO.getBoardSeq();
 	}
 	
 	/** 게시판 업데이트 */
-	public int update(BoardDTO board) {
-		return boardRepository.update(board);
+	public int update(BoardInsertDTO boardInsertDTO) {
+		return boardRepository.update(boardInsertDTO);
 	}
 	
 	/** 게시판 삭제 */
@@ -58,15 +59,15 @@ public class BoardSevice {
 	
 	
 	/** 단순 반복문을 이용한 등록 처리 */
-	public void saveList1(List<BoardDTO> list) {
-		for(BoardDTO dto : list) {
+	public void saveList1(List<BoardInsertDTO> list) {
+		for(BoardInsertDTO dto : list) {
 			boardRepository.save(dto);
 		}
 	}
 	
 	
 	/** 100개씩 배열에 담아서 일괄 등록 처리 **/
-	public void saveList2(List<BoardDTO> boardList) {
+	public void saveList2(List<BoardInsertDTO> boardList) {
 		Map<String, Object> paramMap=new HashMap<>();
 		paramMap.put("boardList", boardList);
 		boardRepository.saveList(paramMap);
