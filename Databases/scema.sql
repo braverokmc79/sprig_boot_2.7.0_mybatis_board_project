@@ -8,6 +8,7 @@ use songjava;
 
 CREATE TABLE t_board(
 	`board_seq` int auto_increment primary key COMMENT 't_board 테이블 pk', 
+	`board_type` varchar(255) COMMENT '게시판 종류', 
 	`title` varchar(255) COMMENT '제목', 
 	`contents` text  COMMENT '내용',
 	`reg_date` timestamp NOT null default current_timestamp() COMMENT '등록일'

@@ -1,4 +1,4 @@
-package kr.so.songjava.mvc.domain.entity;
+package kr.so.songjava.mvc.domain.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

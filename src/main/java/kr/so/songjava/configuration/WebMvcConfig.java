@@ -7,8 +7,14 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import org.springframework.http.MediaType;
 
 import kr.so.songjava.configuration.handler.BaseHandlerInterceptor;
+import kr.so.songjava.mvc.domain.enums.BaseCodeLabelEnum;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -63,6 +69,30 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		//다국어 설정을 위한 localeChangeInterceptor 을 인터셉터에 등록
 		registry.addInterceptor(localeChangeInterceptor());
 	}
+	
+	
+	
+//	@Bean
+//	public ObjectMapper objectMapper() {
+//		ObjectMapper objectMapper =new ObjectMapper();
+//		SimpleModule simpleModule =new SimpleModule();
+//		simpleModule.addSerializer(BaseCodeLabelEnum.class, new BaseCodeLabelEnumJsonSerializer());
+//		objectMapper.registerModule(simpleModule);
+//		return objectMapper;
+//	}
+//	
+//	
+//	
+//	@Bean
+//	public MappingJackson2JsonView mappingJackson2JsonView() {
+//		MappingJackson2JsonView jsonView=new MappingJackson2JsonView();
+//		jsonView.setContentType(MediaType.APPLICATION_JSON_VALUE);
+//		jsonView.setObjectMapper(objectMapper());
+//		return jsonView;		
+//	}
+	
+	
+	
 	
 	
 }

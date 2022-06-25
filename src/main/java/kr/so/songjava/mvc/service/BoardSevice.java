@@ -5,10 +5,17 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+
+import kr.so.songjava.configuration.BaseCodeLabelEnumJsonSerializer;
 import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.entity.Board;
+import kr.so.songjava.mvc.domain.enums.BaseCodeLabelEnum;
 import kr.so.songjava.mvc.repository.BoardRepository;
 
 /** 게시판 서비스 */
@@ -64,6 +71,6 @@ public class BoardSevice {
 		paramMap.put("boardList", boardList);
 		boardRepository.saveList(paramMap);
 	}
-	
-	
+
+
 }

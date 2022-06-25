@@ -1,7 +1,7 @@
 package kr.so.songjava.mvc.domain.dto;
 
-import kr.so.songjava.mvc.domain.entity.Role;
 import kr.so.songjava.mvc.domain.entity.User;
+import kr.so.songjava.mvc.domain.enums.Role;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -6,6 +6,7 @@
   <select id="getList" 	parameterType="kr.so.songjava.mvc.domain.entity.Board" resultType="kr.so.songjava.mvc.domain.entity.Board">
     SELECT
     	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
     	 B.TITLE,
     	 B.REG_DATE    	 
    FROM T_BOARD B 
@@ -18,6 +19,7 @@
    <select id="get"  resultType="kr.so.songjava.mvc.domain.entity.Board" >
         SELECT
     	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
     	 B.TITLE,
     	 B.CONTENTS,
     	 B.REG_DATE    	 
@@ -28,15 +30,16 @@
   
   
   <insert id="save" parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO" useGeneratedKeys="true"  keyProperty="boardSeq">
-  INSERT INTO T_BOARD  ( TITLE, CONTENTS, REG_DATE )
+  INSERT INTO T_BOARD  (BOARD_TYPE, TITLE, CONTENTS, REG_DATE )
   
-  VALUES( #{title}, #{contents}, NOW())
+  VALUES(#{boardType}, #{title}, #{contents}, NOW())
   </insert>
   
   
   <update id="update" parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO">
   	UPDATE T_BOARD
   		SET
+  			BOARD_TYPE=#{boardType},
   			TITLE=#{title},
   			CONTENTS =#{contents}
   	WHERE BOARD_SEQ =#{boardSeq}		

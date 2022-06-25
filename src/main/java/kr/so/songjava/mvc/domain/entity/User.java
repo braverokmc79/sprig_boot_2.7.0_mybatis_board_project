@@ -1,11 +1,12 @@
 package kr.so.songjava.mvc.domain.entity;
 
+import kr.so.songjava.mvc.domain.enums.Role;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
+@Getter
 @ToString
 @NoArgsConstructor
 public class User  extends BaseTimeEntity{
@@ -35,13 +36,6 @@ public class User  extends BaseTimeEntity{
 	}
 	
 	
-	
-	
-
-	
-	
-	
-
 	
 	
 }
