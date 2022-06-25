@@ -1,7 +1,9 @@
 package kr.so.songjava.mvc.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +17,16 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import kr.so.songjava.configuration.http.BaseResponse;
-import kr.so.songjava.mvc.domain.dto.BoardDto;
+import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.service.BoardSevice;
+import lombok.extern.slf4j.Slf4j;
+import net.bytebuddy.utility.RandomString;
 
 @RestController
 @RequestMapping("/board")
 @Api(tags="게시판 API")
+@Slf4j
 public class BoardApiController {
 
 	
@@ -56,7 +61,7 @@ public class BoardApiController {
 		@ApiImplicitParam(name="title", value="제목", example = "spring"),
 		@ApiImplicitParam(name="contents", value="내용", example="spring 강좌"),
 	})
-	public BaseResponse<Integer> save(BoardDto boardDto) {
+	public BaseResponse<Integer> save(BoardDTO boardDto) {
 		boardService.save(boardDto);
 		return new BaseResponse<Integer>(boardDto.getBoardSeq());
 	}
@@ -72,6 +77,60 @@ public class BoardApiController {
 	public BaseResponse<Boolean>  delete(@PathVariable int boardSeq) {
 		return  new BaseResponse<Boolean>(boardService.delete(boardSeq));
 	}
+	
+	
+	/**대용량 등록 처리1 **/
+	@ApiOperation(value="대용량 등록처리1" , notes="대용량 등록처리1")
+	@PutMapping("/saveList1")
+	public BaseResponse<Boolean> saveList1(){
+		int count=0;
+		//테스트를 위한 랜덤 1000 건의 데이터를 생성
+		List<BoardDTO> list=new ArrayList<BoardDTO>();
+		while(true){
+			count++;
+			String title=RandomStringUtils.randomAlphabetic(10);
+			String contents=RandomStringUtils.randomAlphabetic(10);
+			list.add(BoardDTO.builder().title(title).contents(contents).build());
+			if(count >1000) {
+				break;
+			}
+		}
+		
+		long start =System.currentTimeMillis();
+		boardService.saveList1(list);
+		long end =System.currentTimeMillis();
+		log.info("실행 시간 : {}",  (end-start) / 1000.0);
+		
+		return new BaseResponse<Boolean>(true); 
+	}
+	
+	
+	
+	/**대용량 등록 처리2 **/
+	@ApiOperation(value="대용량 등록처리2" , notes="대용량 등록처리2")
+	@PutMapping("/saveList2")
+	public BaseResponse<Boolean> saveList2(){
+		int count=0;
+		//테스트를 위한 랜덤 1000 건의 데이터를 생성
+		List<BoardDTO> list=new ArrayList<BoardDTO>();
+		while(true){
+			count++;
+			String title=RandomStringUtils.randomAlphabetic(10);
+			String contents=RandomStringUtils.randomAlphabetic(10);
+			list.add(BoardDTO.builder().title(title).contents(contents).build());
+			if(count >1000) {
+				break;
+			}
+		}
+		
+		long start =System.currentTimeMillis();
+		boardService.saveList2(list);
+		long end =System.currentTimeMillis();
+		log.info("실행 시간 : {}",  (end-start) / 1000.0);
+		
+		return new BaseResponse<Boolean>(true); 
+	}
+	
 	
 	
 	

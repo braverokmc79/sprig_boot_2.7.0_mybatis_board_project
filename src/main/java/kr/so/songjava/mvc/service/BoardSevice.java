@@ -1,11 +1,13 @@
 package kr.so.songjava.mvc.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.so.songjava.mvc.domain.dto.BoardDto;
+import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.entity.Board;
 import kr.so.songjava.mvc.repository.BoardRepository;
 
@@ -27,7 +29,7 @@ public class BoardSevice {
 	}
 
 	/** 게시판 저장 */
-	public int save(BoardDto boardDto) {
+	public int save(BoardDTO boardDto) {
 		Board board =boardRepository.get(boardDto.getBoardSeq());
 		if(board==null) {
 			boardRepository.save(boardDto);
@@ -38,7 +40,7 @@ public class BoardSevice {
 	}
 	
 	/** 게시판 업데이트 */
-	public int update(BoardDto board) {
+	public int update(BoardDTO board) {
 		return boardRepository.update(board);
 	}
 	
@@ -47,6 +49,21 @@ public class BoardSevice {
 		return boardRepository.delete(boardSeq)==1?true:false;
 	}
 	
+	
+	/** 단순 반복문을 이용한 등록 처리 */
+	public void saveList1(List<BoardDTO> list) {
+		for(BoardDTO dto : list) {
+			boardRepository.save(dto);
+		}
+	}
+	
+	
+	/** 100개씩 배열에 담아서 일괄 등록 처리 **/
+	public void saveList2(List<BoardDTO> boardList) {
+		Map<String, Object> paramMap=new HashMap<>();
+		paramMap.put("boardList", boardList);
+		boardRepository.saveList(paramMap);
+	}
 	
 	
 }

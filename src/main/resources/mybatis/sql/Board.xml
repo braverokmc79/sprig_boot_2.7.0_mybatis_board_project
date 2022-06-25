@@ -27,14 +27,14 @@
   
   
   
-  <insert id="save" parameterType="kr.so.songjava.mvc.domain.dto.BoardDto" useGeneratedKeys="true"  keyProperty="boardSeq">
+  <insert id="save" parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO" useGeneratedKeys="true"  keyProperty="boardSeq">
   INSERT INTO T_BOARD  ( TITLE, CONTENTS, REG_DATE )
   
   VALUES( #{title}, #{contents}, NOW())
   </insert>
   
   
-  <update id="update" parameterType="kr.so.songjava.mvc.domain.dto.BoardDto">
+  <update id="update" parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO">
   	UPDATE T_BOARD
   		SET
   			TITLE=#{title},
@@ -47,6 +47,20 @@
   	DELETE FROM T_BOARD WHERE BOARD_SEQ =#{boardSeq}
   </delete>
   
+
+ 
+	<insert id="saveList" >
+	  INSERT INTO T_BOARD  ( TITLE, CONTENTS, REG_DATE )
+	 
+		  VALUES
+		   	  
+		  <foreach collection="boardList" item="board" separator=",">
+		  		( #{board.title}, #{board.contents}, NOW()  )	
+		  </foreach>
+		 
+	</insert>
+
+
 
   
 </mapper>

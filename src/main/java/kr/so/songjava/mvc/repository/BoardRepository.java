@@ -1,10 +1,11 @@
 package kr.so.songjava.mvc.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import kr.so.songjava.mvc.domain.dto.BoardDto;
+import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.entity.Board;
 
 /** 게시판 Repository */
@@ -15,10 +16,14 @@ public interface BoardRepository {
 	
 	public Board get(int boardSeq);
 	
-	public int save(BoardDto boardDto);
+	public int save(BoardDTO boardDto);
+
+	public void saveList(Map<String, Object> paramMap);
 	
-	public int update(BoardDto boardDto);
+	public int update(BoardDTO boardDto);
 	
 	public int delete(int boardSeq);
+	
+
 		
 }
