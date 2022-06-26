@@ -13,7 +13,7 @@
 	<artifactId>myapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>example-spring</name>
-	<description>Songjava project for Spring Boot</description>
+	<description>MacaronicsJava project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 		<swagger-version>2.9.2</swagger-version>

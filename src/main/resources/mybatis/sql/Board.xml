@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.so.songjava.mvc.repository.BoardRepository">
+<mapper namespace="kr.net.macaronics.mvc.repository.BoardRepository">
   
-  <select id="getList" 	resultType="kr.so.songjava.mvc.domain.entity.Board">
+  <select id="getList" 	resultType="kr.net.macaronics.mvc.domain.entity.Board">
     SELECT
     	 B.BOARD_SEQ,
     	 B.BOARD_TYPE,
@@ -29,7 +29,7 @@
 	
 
 
-    <select id="paginationSearchList" 	resultType="kr.so.songjava.mvc.domain.entity.Board">
+    <select id="paginationSearchList" 	resultType="kr.net.macaronics.mvc.domain.entity.Board">
     SELECT
     	 B.BOARD_SEQ,
     	 B.BOARD_TYPE,
@@ -79,7 +79,7 @@
   	</select>
   
   
-    <select id="paginationSearchList2" 	resultType="kr.so.songjava.mvc.domain.entity.Board">
+    <select id="paginationSearchList2" 	resultType="kr.net.macaronics.mvc.domain.entity.Board">
 	    SELECT
 	    	 B.BOARD_SEQ,
 	    	 B.BOARD_TYPE,
@@ -104,7 +104,7 @@
   
   
   
-   <select id="get"  resultType="kr.so.songjava.mvc.domain.entity.Board" >
+   <select id="get"  resultType="kr.net.macaronics.mvc.domain.entity.Board" >
         SELECT
     	 B.BOARD_SEQ,
     	 B.BOARD_TYPE,
@@ -117,14 +117,14 @@
   
   
   
-  <insert id="save" parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO" useGeneratedKeys="true"  keyProperty="boardSeq">
+  <insert id="save" parameterType="kr.net.macaronics.mvc.domain.dto.BoardDTO" useGeneratedKeys="true" keyProperty="boardSeq">
   INSERT INTO T_BOARD  (BOARD_TYPE, TITLE, CONTENTS, REG_DATE )
   
   VALUES(#{boardType}, #{title}, #{contents}, NOW())
   </insert>
   
   
-  <update id="update" parameterType="kr.so.songjava.mvc.domain.dto.BoardDTO">
+  <update id="update" parameterType="kr.net.macaronics.mvc.domain.dto.BoardDTO">
   	UPDATE T_BOARD
   		SET
   			BOARD_TYPE=#{boardType},
