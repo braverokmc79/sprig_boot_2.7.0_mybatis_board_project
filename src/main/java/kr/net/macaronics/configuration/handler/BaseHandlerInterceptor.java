@@ -18,7 +18,7 @@ public class BaseHandlerInterceptor implements HandlerInterceptor {
   
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("\n\n\n*** [preHandle] URI : {} - 시작 " , request.getRequestURI());
+        //log.info("\n\n\n*** [preHandle] URI : {} - 시작 " , request.getRequestURI());
 		
         //preHandle 및 어노테이션 상용법 - 로그인 테스트
         if(handler instanceof HandlerMethod) {

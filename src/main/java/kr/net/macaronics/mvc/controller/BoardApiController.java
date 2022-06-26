@@ -99,7 +99,7 @@ public class BoardApiController {
 
 	/** 게시판 등록/수정처리 */
 	@PutMapping("/save")
-	@RequestConfig(loginCheck = true)
+	//@RequestConfig(loginCheck = true)
 	@ApiOperation(value="등록/수정처리", notes="신규 게시물 저장 및 기존 게시물 업데이트가 가능합니다.")
 	@ApiImplicitParams({
 		@ApiImplicitParam(name="boardSeq", value="게시물번호", example = "1"),
