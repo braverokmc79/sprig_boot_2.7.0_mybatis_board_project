@@ -1,20 +1,18 @@
 package kr.so.songjava.configuration;
 
+import java.util.List;
+
 import org.springframework.boot.web.servlet.view.MustacheViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
-import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.springframework.http.MediaType;
 
 import kr.so.songjava.configuration.handler.BaseHandlerInterceptor;
-import kr.so.songjava.mvc.domain.enums.BaseCodeLabelEnum;
+import kr.so.songjava.utils.pagination.MySQLPageRequestHandleMethodArgumentResolver;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -92,6 +90,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //	}
 	
 	
+	/** 페이징 처리 */	
+	@Override
+	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+		// 페이지 리졸버 등록
+		resolvers.add(new MySQLPageRequestHandleMethodArgumentResolver());
+	}
 	
 	
 	

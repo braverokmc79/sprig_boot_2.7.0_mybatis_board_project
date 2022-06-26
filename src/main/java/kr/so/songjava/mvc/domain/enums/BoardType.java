@@ -17,8 +17,12 @@ public enum BoardType {
     INQUIRY("INQUIRY" ,"1:1문의")
     ;
          
-    //@JsonValue // 추가
-    private String code;
+    /** 한개의 데이터만 가져올경우 @JsonFormat 제거후 해당 변수에 @JsonValue 어노테이션 추가
+	   "boardType": "FAQ", 형태로 반환 
+	 */
+    //@JsonValue 
+	private String code;
     private String label;
          
 }
+

@@ -22,7 +22,11 @@ import kr.so.songjava.mvc.domain.dto.BoardDTO;
 import kr.so.songjava.mvc.domain.dto.BoardInsertDTO;
 import kr.so.songjava.mvc.domain.dto.BoardSearchParameter;
 import kr.so.songjava.mvc.domain.entity.Board;
+import kr.so.songjava.mvc.domain.enums.BoardTypeInsert;
 import kr.so.songjava.mvc.service.BoardSevice;
+import kr.so.songjava.utils.pagination.MySQLPageRequest;
+import kr.so.songjava.utils.pagination.PageRequestParameter;
+import kr.so.songjava.utils.pagination2.MysqlPageMaker;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -35,12 +39,49 @@ public class BoardApiController {
 	@Autowired
 	private BoardSevice boardService;
 
-	/** 게시판 목록리턴 */
+	/** 1.게시판 검색처리목록리턴 페이징 처리 x */
 	@GetMapping({"","/"})
-	@ApiOperation(value="목록조회", notes="게시물 번호에 해당하는 목록정보를 조회할수 있습니다.")
-	public BaseResponse<List<BoardDTO>> getList(@ApiParam BoardSearchParameter boardSearchParameter){
+	@ApiOperation(value="목록조회", notes="1.게시판 검색처리목록리턴 페이징 처리 x")
+	public BaseResponse<List<BoardDTO>> getList(@ApiParam BoardSearchParameter boardSearchParameter) throws Exception{
 		return new BaseResponse<List<BoardDTO>>(boardService.getList(boardSearchParameter));
 	}
+	
+	
+	/**2.게시판 페이징 검색처리 목록리턴  - 페이징 검색처리 첫번째 방법 (WebMvcConfig 에 페이지 리졸버 등록 방식) */
+	@GetMapping({"/pageSearchList"})
+	@ApiOperation(value="목록조회 - WebMvcConfig 에 페이지 리졸버 등록 방식", notes="2.게시판 페이징 검색처리 목록리턴 ")
+	public BaseResponse<List<BoardDTO>> paginationSearchList(
+			@ApiParam  MySQLPageRequest pageRequest,
+			@ApiParam  BoardSearchParameter parameter
+			) throws Exception{
+		log.info("1.pageRequest :" , pageRequest);
+		PageRequestParameter<BoardSearchParameter> pageRequestParameter=new PageRequestParameter<BoardSearchParameter>(pageRequest, parameter);
+		log.info("2.pageRequestParameter :" , pageRequestParameter);
+		return new BaseResponse<List<BoardDTO>>(boardService.paginationSearchList(pageRequestParameter));
+	}
+
+	
+	
+	/** 3. 게시판 페이징 검색처리 목록리턴 - 페이징 검색처리 두번째방법 (전체 갯수 구함) */
+	@GetMapping({"/pageSearchList2"})
+	@ApiOperation(value="목록조회 - MysqlPageMaker 사용 ", notes="3.게시판 페이징 검색처리 목록리턴 ")
+	public BaseResponse<List<BoardDTO>> paginationSearchList2(
+			@ApiParam  MysqlPageMaker pageMaker
+			) throws Exception{
+		
+		int totalCount =boardService.getTotalCount(pageMaker);
+		pageMaker.setTotalCount(totalCount);
+		
+		log.info("1.pageMaker :  {} " , pageMaker);
+		log.info("2.totalCount :  {}" , totalCount);		
+		return new BaseResponse<List<BoardDTO>>(boardService.paginationSearchList2(pageMaker), pageMaker);
+	}
+	
+
+	
+	
+	
+	
 	
 	
 	/** 게시판 상세보기 */
@@ -49,7 +90,7 @@ public class BoardApiController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(name="boardSeq", value="게시물 번호", example = "1")
 	})
-	public BaseResponse<Board> get(@PathVariable int boardSeq) {		
+	public BaseResponse<Board> get(@PathVariable int boardSeq) throws Exception {		
 		return new BaseResponse<Board>(boardService.get(boardSeq));
 	}
 	
@@ -64,7 +105,7 @@ public class BoardApiController {
 		@ApiImplicitParam(name="title", value="제목", example = "spring"),
 		@ApiImplicitParam(name="contents", value="내용", example="spring 강좌"),
 	})
-	public BaseResponse<Integer> save(BoardInsertDTO boardInsertDTO) {
+	public BaseResponse<Integer> save(BoardInsertDTO boardInsertDTO)  throws Exception {
 		boardService.save(boardInsertDTO);
 		return new BaseResponse<Integer>(boardInsertDTO.getBoardSeq());
 	}
@@ -77,7 +118,7 @@ public class BoardApiController {
 	@ApiImplicitParams({
 		@ApiImplicitParam(name="boardSeq", value="게시물 번호", example = "1")
 	})
-	public BaseResponse<Boolean>  delete(@PathVariable int boardSeq) {
+	public BaseResponse<Boolean>  delete(@PathVariable int boardSeq)  throws Exception{
 		return  new BaseResponse<Boolean>(boardService.delete(boardSeq));
 	}
 	
@@ -85,7 +126,7 @@ public class BoardApiController {
 	/**대용량 등록 처리1 **/
 	@ApiOperation(value="대용량 등록처리1" , notes="대용량 등록처리1")
 	@PutMapping("/saveList1")
-	public BaseResponse<Boolean> saveList1(){
+	public BaseResponse<Boolean> saveList1() throws Exception{
 		int count=0;
 		//테스트를 위한 랜덤 1000 건의 데이터를 생성
 		List<BoardInsertDTO> list=new ArrayList<BoardInsertDTO>();
@@ -93,7 +134,19 @@ public class BoardApiController {
 			count++;
 			String title=RandomStringUtils.randomAlphabetic(10);
 			String contents=RandomStringUtils.randomAlphabetic(10);
-			list.add(BoardInsertDTO.builder().title(title).contents(contents).build());
+			BoardTypeInsert boardTypeInsert=null;
+			if(count%4==0) {
+				boardTypeInsert=BoardTypeInsert.NOTICE;
+			}if(count%5==0)  {
+				boardTypeInsert=BoardTypeInsert.INQUIRY;
+			}else {
+				if(count%2==0) {
+					boardTypeInsert=BoardTypeInsert.FAQ;	
+				}else {
+					boardTypeInsert=BoardTypeInsert.NOTICE;	
+				}				
+			}
+			list.add(BoardInsertDTO.builder().boardType(boardTypeInsert).title(title).contents(contents).build());
 			if(count >1000) {
 				break;
 			}
@@ -112,7 +165,7 @@ public class BoardApiController {
 	/**대용량 등록 처리2 **/
 	@ApiOperation(value="대용량 등록처리2" , notes="대용량 등록처리2")
 	@PutMapping("/saveList2")
-	public BaseResponse<Boolean> saveList2(){
+	public BaseResponse<Boolean> saveList2() throws Exception{
 		int count=0;
 		//테스트를 위한 랜덤 1000 건의 데이터를 생성
 		List<BoardInsertDTO> list=new ArrayList<BoardInsertDTO>();
@@ -120,7 +173,21 @@ public class BoardApiController {
 			count++;
 			String title=RandomStringUtils.randomAlphabetic(10);
 			String contents=RandomStringUtils.randomAlphabetic(10);
-			list.add(BoardInsertDTO.builder().title(title).contents(contents).build());
+			
+			BoardTypeInsert boardTypeInsert=null;
+			if(count%4==0) {
+				boardTypeInsert=BoardTypeInsert.NOTICE;
+			}if(count%5==0)  {
+				boardTypeInsert=BoardTypeInsert.INQUIRY;
+			}else {
+				if(count%2==0) {
+					boardTypeInsert=BoardTypeInsert.FAQ;	
+				}else {
+					boardTypeInsert=BoardTypeInsert.NOTICE;	
+				}				
+			}
+			
+			list.add(BoardInsertDTO.builder().boardType(boardTypeInsert).title(title).contents(contents).build());
 			if(count >1000) {
 				break;
 			}

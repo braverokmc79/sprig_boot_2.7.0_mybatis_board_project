@@ -26,7 +26,82 @@
    ORDER BY B.REG_DATE DESC     	
   </select>
   
+	
 
+
+    <select id="paginationSearchList" 	resultType="kr.so.songjava.mvc.domain.entity.Board">
+    SELECT
+    	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
+    	 B.TITLE,
+    	 B.REG_DATE    	 
+   FROM T_BOARD B 
+   <where>
+   	 <if test="@org.apache.commons.lang3.StringUtils@isNotEmpty(parameter.keyword)">
+   	 	AND B.TITLE LIKE CONCAT('%',  #{parameter.keyword}, '%')
+   	 </if>
+   	 
+   	 <if test="@org.apache.commons.lang3.ObjectUtils@isNotEmpty(parameter.boardTypes)">
+   	 	AND B.BOARD_TYPE IN (
+   	 		<foreach collection="boardTypes" item="value" separator=",">
+   	 			#{value}
+   	 		</foreach>
+   	 	)
+   	 </if>   	 
+   </where>   
+   ORDER BY B.REG_DATE DESC     
+   LIMIT #{pageRequest.limit} , #{pageRequest.offset}
+  </select>
+  
+  
+  
+    <sql id="searchSql">
+       <where>
+	   	 <if test="@org.apache.commons.lang3.StringUtils@isNotEmpty(keyword)">
+	   	 	AND B.TITLE LIKE CONCAT('%',  #{keyword}, '%')
+	   	 </if>
+	   	 
+	   	 <if test="@org.apache.commons.lang3.ObjectUtils@isNotEmpty(boardTypes)">
+	   	 	AND B.BOARD_TYPE IN (
+	   	 		<foreach collection="boardTypes" item="value" separator=",">
+	   	 			#{value}
+	   	 		</foreach>
+	   	 	)
+	   	 </if>   	 
+	   </where>       
+    </sql>
+  
+  	<select id="getTotalCount" resultType="int">
+  	  SELECT
+	    	 COUNT(B.BOARD_SEQ) AS cnt    	 
+	   FROM T_BOARD B 
+  		<include refid="searchSql"></include>
+  	</select>
+  
+  
+    <select id="paginationSearchList2" 	resultType="kr.so.songjava.mvc.domain.entity.Board">
+	    SELECT
+	    	 B.BOARD_SEQ,
+	    	 B.BOARD_TYPE,
+	    	 B.TITLE,
+	    	 B.REG_DATE    	 
+	   FROM T_BOARD B 
+	 
+	    <include refid="searchSql"></include>
+	 
+	   ORDER BY B.REG_DATE DESC     
+	   LIMIT #{pageStart} , #{perPageNum}
+  </select>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
    <select id="get"  resultType="kr.so.songjava.mvc.domain.entity.Board" >
@@ -66,12 +141,12 @@
 
  
 	<insert id="saveList" >
-	  INSERT INTO T_BOARD  ( TITLE, CONTENTS, REG_DATE )
+	  INSERT INTO T_BOARD  (BOARD_TYPE, TITLE, CONTENTS, REG_DATE )
 	 
 		  VALUES
 		   	  
 		  <foreach collection="boardList" item="board" separator=",">
-		  		( #{board.title}, #{board.contents}, NOW()  )	
+		  		(#{board.boardType}, #{board.title}, #{board.contents}, NOW()  )	
 		  </foreach>
 		 
 	</insert>
