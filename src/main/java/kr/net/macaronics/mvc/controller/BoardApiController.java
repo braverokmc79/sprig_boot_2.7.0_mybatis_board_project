@@ -3,13 +3,6 @@ package kr.net.macaronics.mvc.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.net.macaronics.configuration.http.BaseResponse;
-import kr.net.macaronics.mvc.domain.dto.BoardDTO;
-import kr.net.macaronics.mvc.domain.dto.BoardInsertDTO;
-import kr.net.macaronics.mvc.domain.dto.BoardSearchParameter;
-import kr.net.macaronics.utils.pagination.MySQLPageRequest;
-import kr.net.macaronics.utils.pagination.PageRequestParameter;
-import kr.net.macaronics.utils.pagination2.MysqlPageMaker;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,9 +17,17 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import kr.net.macaronics.annotation.RequestConfig;
+import kr.net.macaronics.configuration.http.BaseResponse;
+import kr.net.macaronics.mvc.domain.dto.BoardDTO;
+import kr.net.macaronics.mvc.domain.dto.BoardInsertDTO;
+import kr.net.macaronics.mvc.domain.dto.BoardSearchParameter;
 import kr.net.macaronics.mvc.domain.entity.Board;
 import kr.net.macaronics.mvc.domain.enums.BoardTypeInsert;
 import kr.net.macaronics.mvc.service.BoardSevice;
+import kr.net.macaronics.utils.pagination.MySQLPageRequest;
+import kr.net.macaronics.utils.pagination.PageRequestParameter;
+import kr.net.macaronics.utils.pagination2.MysqlPageMaker;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -98,6 +99,7 @@ public class BoardApiController {
 
 	/** 게시판 등록/수정처리 */
 	@PutMapping("/save")
+	@RequestConfig(loginCheck = true)
 	@ApiOperation(value="등록/수정처리", notes="신규 게시물 저장 및 기존 게시물 업데이트가 가능합니다.")
 	@ApiImplicitParams({
 		@ApiImplicitParam(name="boardSeq", value="게시물번호", example = "1"),

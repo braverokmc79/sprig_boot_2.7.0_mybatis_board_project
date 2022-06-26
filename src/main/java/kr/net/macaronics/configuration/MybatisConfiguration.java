@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * MyBatis 설정
  */
 @Configuration
-@MapperScan(basePackages = "kr.so.songjava.mvc.repository")
+@MapperScan(basePackages = "kr.net.macaronics.mvc.repository")
 public class MybatisConfiguration {
 
 	@Bean

@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
-
+	
 	@Bean
 	public Docket docker() {
 		ApiInfoBuilder apiInfo=new ApiInfoBuilder();
@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
 		Docket docket=new Docket(DocumentationType.SWAGGER_2);
 		docket.apiInfo(apiInfo.build());
 				
-		ApiSelectorBuilder apis=docket.select().apis(RequestHandlerSelectors.basePackage("kr.so.songjava.mvc.controller"));
+		ApiSelectorBuilder apis=docket.select().apis(RequestHandlerSelectors.basePackage("kr.net.macaronics.mvc.controller"));
 		apis.paths(PathSelectors.ant("/**"));
 		
 		return apis.build();				

@@ -1,6 +1,6 @@
-create user `songjava`@`localhost` identified by '1111';    
-create database songjava CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;  
-grant all privileges on songjava.* to `songjava`@`localhost` ;
+create user `restapi1`@`localhost` identified by '1111';    
+create database restapi1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;  
+grant all privileges on restapi1.* to `restapi1`@`localhost` ;
 
 use songjava;
 

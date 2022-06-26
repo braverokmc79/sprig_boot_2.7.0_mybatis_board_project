@@ -7,13 +7,13 @@ import lombok.Data;
 @Data
 public class BaseResponse<T> {
 
+	private String status=BaseResponseCode.SUCCESS.name();
 	private BaseResponseCode code;
 	private String message;
 	private MysqlPageMakerResponse pageMaker;
-	private int displayPageNum;
-	
 	private T data;
-
+	
+		
 	public BaseResponse(T data) {		
 		this.code=BaseResponseCode.SUCCESS;
 		this.data=data;
@@ -24,6 +24,20 @@ public class BaseResponse<T> {
 		else this.code=BaseResponseCode.SUCCESS;
 		this.data=data;
 	}
+	
+	
+	public BaseResponse(BaseResponseCode code) {		
+		this.code=code;	
+	}
+
+
+	public BaseResponse(String status, String code, String message) {		
+		this.status=status;
+		this.code =BaseResponseCode.valueOf(code);	
+		this.message=message;				
+	}
+
+	
 	
 	public BaseResponse(String status, T data, String message) {
 		if(status.equals("error"))this.code=BaseResponseCode.ERROR;		
