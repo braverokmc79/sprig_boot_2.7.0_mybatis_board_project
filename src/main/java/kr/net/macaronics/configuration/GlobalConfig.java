@@ -11,19 +11,35 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 
+	글로벌 변수
+ *
+ */
 @Slf4j
+@Data
 public class GlobalConfig {
 
 	@Autowired
 	private ApplicationContext context;
 	
 	@Autowired
-	private ResourceLoader resourceLoader;
-	
+	private ResourceLoader resourceLoader;		
 	
 	private String uploadFilePath;
+	
+	private String schedulerCronExample1;
+	
+	
+	private boolean local;
+	private boolean dev;
+	private boolean prod;
+	
+	
+	
 	
 	/**
 	 * @PostConstruct는 의존성 주입이 이루어진 후 초기화를 수행하는 메서드이다. 
@@ -49,7 +65,13 @@ public class GlobalConfig {
 		try {
 			Resource resource=resourceLoader.getResource(resourcePath);
 			Properties properties=PropertiesLoaderUtils.loadProperties(resource);
-			uploadFilePath=properties.getProperty("uploadFile.path");
+			this.uploadFilePath=properties.getProperty("uploadFile.path");
+			this.schedulerCronExample1 =properties.getProperty("scheduler.cron.example1");
+			
+			this.local=activeProfile.equals("local");
+			this.dev=activeProfile.equals("dev");
+			this.prod=activeProfile.equals("prod");
+			
 		}catch (Exception e) {
 			log.error("e", e);
 		}
