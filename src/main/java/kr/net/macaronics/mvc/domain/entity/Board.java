@@ -12,6 +12,7 @@ public class Board {
 	private BoardType boardType;
 	private String title;
 	private String contents;
+	private boolean delYn;
 	private Date regDate;
 }
 

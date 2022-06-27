@@ -19,6 +19,7 @@ public class BoardInsertDTO {
 	private BoardTypeInsert boardType;
 	private String title;	
 	private String contents;
+	private String delYn;
 		
 }
 

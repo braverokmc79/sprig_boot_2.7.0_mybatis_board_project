@@ -15,9 +15,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 
-	글로벌 변수
- *
+ * global ~.properties 값을 읽어와	글로벌 변수설정하는 클래스
  */
 @Slf4j
 @Data

@@ -11288,3 +11288,494 @@ Caused by: org.springframework.expression.spel.SpelParseException: Expression [@
 04:15:48.013 [scheduling-1] INFO  k.n.m.c.s.ExampleScheduler -  schedule1 동작하고 있음 true, Mon Jun 27 04:15:48 KST 2022 
 04:15:49.370 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
 04:15:51.005 [scheduling-1] INFO  k.n.m.c.s.ExampleScheduler -  schedule1 동작하고 있음 true, Mon Jun 27 04:15:51 KST 2022 
+14:57:42.640 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 55148 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+14:57:42.641 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+14:57:42.670 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:57:42.671 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:57:43.556 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:57:43.624 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 953 ms
+14:57:43.681 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+14:57:44.116 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:57:44.287 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:57:44.452 [restartedMain] INFO  k.n.m.Application - Started Application in 2.141 seconds (JVM running for 4.29)
+14:57:55.695 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+14:57:57.043 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 55148 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+14:57:57.043 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+14:57:57.290 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:57:57.307 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 262 ms
+14:57:57.318 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+14:57:57.425 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:57:57.463 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:57:57.509 [restartedMain] INFO  k.n.m.Application - Started Application in 0.504 seconds (JVM running for 17.346)
+14:57:57.510 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+14:58:08.132 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:58:08.134 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+14:58:11.978 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+14:58:24.004 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 52780 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+14:58:24.005 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+14:58:24.034 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:58:24.035 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:58:24.924 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:58:24.987 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 952 ms
+14:58:25.026 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+14:58:25.444 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:58:25.608 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:58:25.770 [restartedMain] INFO  k.n.m.Application - Started Application in 2.08 seconds (JVM running for 4.22)
+14:59:09.944 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:59:09.948 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
+14:59:10.005 [http-nio-8080-exec-1] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+14:59:10.124 [http-nio-8080-exec-1] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+14:59:10.145 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+    	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
+    	 B.TITLE,
+    	 (SELECT IF( B.DEL_YN ='Y', true, false)  ) as DEL_YN ,
+    	 B.REG_DATE    	 
+   FROM T_BOARD B 
+
+   ORDER BY B.REG_DATE DESC
+ {executed in 6 msec}
+14:59:10.155 [http-nio-8080-exec-1] INFO  j.resultsettable - 
+|----------|-----------|------|-------|----------------------|
+|board_seq |board_type |title |del_yn |reg_date              |
+|----------|-----------|------|-------|----------------------|
+|1         |null       |제목    |0      |2022-06-27 23:38:24.0 |
+|----------|-----------|------|-------|----------------------|
+
+14:59:40.041 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+14:59:40.908 [Thread-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:59:40.915 [Thread-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:59:40.992 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 52780 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+14:59:40.992 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+14:59:41.231 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:59:41.247 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 254 ms
+14:59:41.257 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+14:59:41.358 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:59:41.398 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:59:41.440 [restartedMain] INFO  k.n.m.Application - Started Application in 0.491 seconds (JVM running for 79.891)
+14:59:41.442 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+14:59:55.922 [RMI TCP Connection(12)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+15:00:05.789 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:00:05.790 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:00:05.820 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:00:05.820 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:00:06.713 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:00:06.777 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 956 ms
+15:00:06.819 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:00:07.273 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:00:07.444 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:00:07.625 [restartedMain] INFO  k.n.m.Application - Started Application in 2.17 seconds (JVM running for 4.344)
+15:01:33.059 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:01:33.062 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+15:01:47.485 [http-nio-8080-exec-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+15:01:47.610 [http-nio-8080-exec-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+15:01:47.632 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+    	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
+    	 B.TITLE,
+    	 (SELECT IF( B.DEL_YN ='Y', 'true', 'false')  ) as DEL_YN ,
+    	 B.REG_DATE    	 
+   FROM T_BOARD B 
+
+   ORDER BY B.REG_DATE DESC
+ {executed in 6 msec}
+15:01:47.640 [http-nio-8080-exec-4] INFO  j.resultsettable - 
+|----------|-----------|------|-------|----------------------|
+|board_seq |board_type |title |del_yn |reg_date              |
+|----------|-----------|------|-------|----------------------|
+|1         |null       |제목    |false  |2022-06-27 23:38:24.0 |
+|----------|-----------|------|-------|----------------------|
+
+15:02:13.134 [Thread-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:02:13.144 [Thread-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:02:13.221 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:02:13.222 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:02:13.470 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:02:13.489 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 266 ms
+15:02:13.501 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:02:13.607 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:02:13.648 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:02:13.699 [restartedMain] INFO  k.n.m.Application - Started Application in 0.517 seconds (JVM running for 130.419)
+15:02:13.701 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:05:09.625 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:05:09.626 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:05:09.841 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:05:09.856 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 229 ms
+15:05:09.866 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:05:09.961 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:05:09.998 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:05:10.035 [restartedMain] INFO  k.n.m.Application - Started Application in 0.44 seconds (JVM running for 306.754)
+15:05:10.036 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:05:33.052 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:05:33.052 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:05:33.264 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:05:33.280 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 227 ms
+15:05:33.290 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:05:33.387 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:05:33.422 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:05:33.458 [restartedMain] INFO  k.n.m.Application - Started Application in 0.44 seconds (JVM running for 330.178)
+15:05:33.459 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:06:44.626 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:06:44.626 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:06:44.842 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:06:44.859 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 232 ms
+15:06:44.869 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:06:44.963 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:06:45.001 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:06:45.038 [restartedMain] INFO  k.n.m.Application - Started Application in 0.442 seconds (JVM running for 401.757)
+15:06:45.039 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:07:11.377 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:07:11.377 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:07:11.586 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:07:11.601 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 222 ms
+15:07:11.610 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:07:11.696 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:07:11.728 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:07:11.760 [restartedMain] INFO  k.n.m.Application - Started Application in 0.413 seconds (JVM running for 428.48)
+15:07:11.761 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:07:21.222 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:07:21.222 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:07:21.421 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:07:21.438 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 215 ms
+15:07:21.446 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:07:21.526 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:07:21.561 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:07:21.590 [restartedMain] INFO  k.n.m.Application - Started Application in 0.396 seconds (JVM running for 438.309)
+15:07:21.590 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:07:26.821 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:07:26.821 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:07:27.027 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:07:27.042 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 219 ms
+15:07:27.051 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:07:27.134 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:07:27.167 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:07:27.196 [restartedMain] INFO  k.n.m.Application - Started Application in 0.402 seconds (JVM running for 443.915)
+15:07:27.197 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:07:36.760 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 20460 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:07:36.760 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:07:36.961 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:07:36.976 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 215 ms
+15:07:36.985 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:07:37.066 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:07:37.100 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:07:37.128 [restartedMain] INFO  k.n.m.Application - Started Application in 0.394 seconds (JVM running for 453.847)
+15:07:37.129 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:07:37.225 [RMI TCP Connection(26)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+15:07:46.382 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:07:46.383 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:07:46.410 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:07:46.410 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:07:47.226 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:07:47.285 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 875 ms
+15:07:47.321 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:07:47.706 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:07:47.857 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:07:48.020 [restartedMain] INFO  k.n.m.Application - Started Application in 1.942 seconds (JVM running for 4.115)
+15:07:55.959 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:07:55.961 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 0 ms
+15:08:24.119 [http-nio-8080-exec-3] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+15:08:24.237 [http-nio-8080-exec-3] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+15:08:24.259 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+	    	 COUNT(B.BOARD_SEQ) AS cnt    	 
+	   FROM T_BOARD B
+ {executed in 7 msec}
+15:08:24.267 [http-nio-8080-exec-3] INFO  j.resultsettable - 
+|----|
+|cnt |
+|----|
+|1   |
+|----|
+
+15:08:24.602 [http-nio-8080-exec-3] INFO  k.n.m.m.c.BoardApiController - 1.pageMaker :  MysqlPageMaker(page=1, perPageNum=10, pageStart=0, totalCount=1, startPage=1, endPage=1, prev=false, next=false, displayPageNum=6, tempEndPage=1, searchType=null, keyword=null, boardTypes=null) 
+15:08:24.603 [http-nio-8080-exec-3] INFO  k.n.m.m.c.BoardApiController - 2.totalCount :  1
+15:08:24.606 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+	    	 B.BOARD_SEQ,
+	    	 B.BOARD_TYPE,
+	    	 B.TITLE,
+	    	 (SELECT IF( B.DEL_YN ='Y', 'true', 'false')  ) as DEL_YN ,
+	    	 B.REG_DATE    	 
+	   FROM T_BOARD B 
+
+	   ORDER BY B.REG_DATE DESC     
+	   LIMIT 0 , 10
+ {executed in 1 msec}
+15:08:24.607 [http-nio-8080-exec-3] INFO  j.resultsettable - 
+|----------|-----------|------|-------|----------------------|
+|board_seq |board_type |title |del_yn |reg_date              |
+|----------|-----------|------|-------|----------------------|
+|1         |null       |제목    |false  |2022-06-27 23:38:24.0 |
+|----------|-----------|------|-------|----------------------|
+
+15:08:54.947 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+    	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
+    	 B.TITLE,
+    	 B.CONTENTS,
+    	 (SELECT IF( B.DEL_YN ='Y', 'true', 'false')  ) as DEL_YN ,
+    	 B.REG_DATE    	 
+   FROM T_BOARD B 
+   WHERE B.BOARD_SEQ =0
+ {executed in 1 msec}
+15:08:54.948 [http-nio-8080-exec-6] INFO  j.resultsettable - 
+|----------|-----------|------|---------|-------|---------|
+|board_seq |board_type |title |contents |del_yn |reg_date |
+|----------|-----------|------|---------|-------|---------|
+|----------|-----------|------|---------|-------|---------|
+
+15:08:54.952 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO T_BOARD  (BOARD_TYPE, TITLE, CONTENTS, REG_DATE )
+
+  VALUES('FAQ', '3333', '999', NOW())
+ {executed in 3 msec}
+15:08:54.952 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyStatement.getGeneratedKeys(ProxyStatement.java:229)
+1. getGeneratedKeys on query: INSERT INTO T_BOARD  (BOARD_TYPE, TITLE, CONTENTS, REG_DATE )
+
+  VALUES('FAQ', '3333', '999', NOW())
+ {executed in 0 msec}
+15:08:54.954 [http-nio-8080-exec-6] INFO  j.resultsettable - 
+|--------------|
+|generated_key |
+|--------------|
+|2             |
+|--------------|
+
+15:09:00.063 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+	    	 COUNT(B.BOARD_SEQ) AS cnt    	 
+	   FROM T_BOARD B
+ {executed in 0 msec}
+15:09:00.064 [http-nio-8080-exec-4] INFO  j.resultsettable - 
+|----|
+|cnt |
+|----|
+|2   |
+|----|
+
+15:09:00.064 [http-nio-8080-exec-4] INFO  k.n.m.m.c.BoardApiController - 1.pageMaker :  MysqlPageMaker(page=1, perPageNum=10, pageStart=0, totalCount=2, startPage=1, endPage=1, prev=false, next=false, displayPageNum=6, tempEndPage=1, searchType=null, keyword=null, boardTypes=null) 
+15:09:00.065 [http-nio-8080-exec-4] INFO  k.n.m.m.c.BoardApiController - 2.totalCount :  2
+15:09:00.066 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+	    	 B.BOARD_SEQ,
+	    	 B.BOARD_TYPE,
+	    	 B.TITLE,
+	    	 (SELECT IF( B.DEL_YN ='Y', 'true', 'false')  ) as DEL_YN ,
+	    	 B.REG_DATE    	 
+	   FROM T_BOARD B 
+
+	   ORDER BY B.REG_DATE DESC     
+	   LIMIT 0 , 10
+ {executed in 1 msec}
+15:09:00.067 [http-nio-8080-exec-4] INFO  j.resultsettable - 
+|----------|-----------|------|-------|----------------------|
+|board_seq |board_type |title |del_yn |reg_date              |
+|----------|-----------|------|-------|----------------------|
+|2         |FAQ        |3333  |false  |2022-06-28 00:08:54.0 |
+|1         |null       |제목    |false  |2022-06-27 23:38:24.0 |
+|----------|-----------|------|-------|----------------------|
+
+15:09:00.142 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+	    	 COUNT(B.BOARD_SEQ) AS cnt    	 
+	   FROM T_BOARD B
+ {executed in 1 msec}
+15:09:00.143 [http-nio-8080-exec-8] INFO  j.resultsettable - 
+|----|
+|cnt |
+|----|
+|2   |
+|----|
+
+15:09:00.143 [http-nio-8080-exec-8] INFO  k.n.m.m.c.BoardApiController - 1.pageMaker :  MysqlPageMaker(page=1, perPageNum=10, pageStart=0, totalCount=2, startPage=1, endPage=1, prev=false, next=false, displayPageNum=6, tempEndPage=1, searchType=null, keyword=null, boardTypes=null) 
+15:09:00.143 [http-nio-8080-exec-8] INFO  k.n.m.m.c.BoardApiController - 2.totalCount :  2
+15:09:00.145 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT
+	    	 B.BOARD_SEQ,
+	    	 B.BOARD_TYPE,
+	    	 B.TITLE,
+	    	 (SELECT IF( B.DEL_YN ='Y', 'true', 'false')  ) as DEL_YN ,
+	    	 B.REG_DATE    	 
+	   FROM T_BOARD B 
+
+	   ORDER BY B.REG_DATE DESC     
+	   LIMIT 0 , 10
+ {executed in 1 msec}
+15:09:00.146 [http-nio-8080-exec-8] INFO  j.resultsettable - 
+|----------|-----------|------|-------|----------------------|
+|board_seq |board_type |title |del_yn |reg_date              |
+|----------|-----------|------|-------|----------------------|
+|2         |FAQ        |3333  |false  |2022-06-28 00:08:54.0 |
+|1         |null       |제목    |false  |2022-06-27 23:38:24.0 |
+|----------|-----------|------|-------|----------------------|
+
+15:09:55.899 [Thread-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:09:55.907 [Thread-4] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:09:55.987 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:09:55.987 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:09:56.242 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:09:56.261 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 273 ms
+15:09:56.274 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:09:56.379 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:09:56.416 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:09:56.459 [restartedMain] INFO  k.n.m.Application - Started Application in 0.512 seconds (JVM running for 132.554)
+15:09:56.461 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:09:59.621 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:09:59.622 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:09:59.855 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:09:59.871 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 248 ms
+15:09:59.881 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:09:59.976 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:10:00.017 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:10:00.054 [restartedMain] INFO  k.n.m.Application - Started Application in 0.465 seconds (JVM running for 136.149)
+15:10:00.055 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:10:16.393 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:10:16.396 [http-nio-8080-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+15:10:35.522 [http-nio-8080-exec-3] INFO  c.z.h.HikariDataSource - HikariPool-2 - Starting...
+15:10:35.527 [http-nio-8080-exec-3] INFO  c.z.h.HikariDataSource - HikariPool-2 - Start completed.
+15:10:35.528 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. SELECT
+    	 B.BOARD_SEQ,
+    	 B.BOARD_TYPE,
+    	 B.TITLE,
+    	 B.CONTENTS,
+    	 (SELECT IF( B.DEL_YN ='Y', 'true', 'false')  ) as DEL_YN ,
+    	 B.REG_DATE    	 
+   FROM T_BOARD B 
+   WHERE B.BOARD_SEQ =0
+ {executed in 1 msec}
+15:10:35.528 [http-nio-8080-exec-3] INFO  j.resultsettable - 
+|----------|-----------|------|---------|-------|---------|
+|board_seq |board_type |title |contents |del_yn |reg_date |
+|----------|-----------|------|---------|-------|---------|
+|----------|-----------|------|---------|-------|---------|
+
+15:10:35.532 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='delYn', mode=IN, javaType=boolean, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #4 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Boolean (java.lang.String and java.lang.Boolean are in module java.base of loader 'bootstrap')] with root cause
+java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Boolean (java.lang.String and java.lang.Boolean are in module java.base of loader 'bootstrap')
+	at org.apache.ibatis.type.BooleanTypeHandler.setNonNullParameter(BooleanTypeHandler.java:26)
+	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:87)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:88)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:194)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:181)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	at com.sun.proxy.$Proxy86.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at com.sun.proxy.$Proxy127.save(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+	at com.sun.proxy.$Proxy128.save(Unknown Source)
+	at kr.net.macaronics.mvc.service.BoardSevice.save(BoardSevice.java:39)
+	at kr.net.macaronics.mvc.controller.BoardApiController.save(BoardApiController.java:111)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+15:11:30.406 [Thread-11] INFO  c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated...
+15:11:30.409 [Thread-11] INFO  c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed.
+15:11:30.487 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:11:30.487 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:11:30.695 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:11:30.711 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 223 ms
+15:11:30.721 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:11:30.809 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:11:30.845 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:11:30.883 [restartedMain] INFO  k.n.m.Application - Started Application in 0.429 seconds (JVM running for 226.978)
+15:11:30.884 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:11:38.346 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:11:38.346 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:11:38.549 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:11:38.563 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 216 ms
+15:11:38.573 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:11:38.660 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:11:38.694 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:11:38.727 [restartedMain] INFO  k.n.m.Application - Started Application in 0.41 seconds (JVM running for 234.822)
+15:11:38.728 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:13:02.758 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:13:02.759 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:13:02.966 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:13:02.981 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 221 ms
+15:13:02.990 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:13:03.076 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:13:03.111 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:13:03.145 [restartedMain] INFO  k.n.m.Application - Started Application in 0.417 seconds (JVM running for 319.24)
+15:13:03.146 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:13:10.403 [restartedMain] INFO  k.n.m.Application - Starting Application using Java 11.0.12 on DESKTOP-22M8BH7 with PID 28092 (E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project\target\classes started by supercom in E:\Spring Boot\inflearn_study\sprig_boot_2.7.0_mybatis_board_project)
+15:13:10.403 [restartedMain] INFO  k.n.m.Application - No active profile set, falling back to 1 default profile: "default"
+15:13:10.605 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+15:13:10.622 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 217 ms
+15:13:10.630 [restartedMain] INFO  k.n.m.c.GlobalConfig - GlobalConfig-init
+15:13:10.714 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:13:10.750 [restartedMain] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+15:13:10.779 [restartedMain] INFO  k.n.m.Application - Started Application in 0.403 seconds (JVM running for 326.874)
+15:13:10.780 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+15:13:17.226 [RMI TCP Connection(21)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.

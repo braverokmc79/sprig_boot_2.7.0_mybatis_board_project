@@ -11,6 +11,7 @@ CREATE TABLE t_board(
 	`board_type` varchar(255) COMMENT '게시판 종류', 
 	`title` varchar(255) COMMENT '제목', 
 	`contents` text  COMMENT '내용',
+	`del_yn` char(1) default 'N' COMMENT '삭제여부',
 	`reg_date` timestamp NOT null default current_timestamp() COMMENT '등록일'
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 

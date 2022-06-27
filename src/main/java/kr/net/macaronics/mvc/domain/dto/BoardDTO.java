@@ -20,7 +20,9 @@ public class BoardDTO {
 	private String title;	
 	private String contents;
 	private String keyword;
-		
+	private boolean delYn;
+	
+	
 }
 
   
