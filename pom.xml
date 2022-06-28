@@ -89,6 +89,20 @@
 			<version>3.12.0</version>
 		</dependency>
 
+
+		<!-- JSP 템플릿 엔진 ,   JSTL -->
+	<!-- 	
+			<dependency>
+				<groupId>org.apache.tomcat.embed</groupId>
+				<artifactId>tomcat-embed-jasper</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+			</dependency>
+	 -->
+
+
 	</dependencies>
 
 	<build>

@@ -17,7 +17,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Api(tags="인덱스 API")
+//@Api(tags="인덱스 API")
 @Slf4j
 public class IndexController {
 
@@ -51,6 +51,16 @@ public class IndexController {
 		String message2=messageSource.getMessage("testName", new String[]{name ,age}, LocaleContextHolder.getLocale());
 		return message2;
 	}
+	
+	
+	
+	
+	@GetMapping("/fileUpload")
+	public String fileUpload() {
+		return "file_upload";
+	}
+	
+	
 	
 	
 }

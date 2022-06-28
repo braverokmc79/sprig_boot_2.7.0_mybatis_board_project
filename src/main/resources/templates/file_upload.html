@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+{{>layout/head}}   
+</head>
+<body>
+
+
+<div class="row mt-5">
+<div class="col-md-3 offset-md-2 text-center">
+<form action="/file/save" enctype="multipart/form-data" method="post">
+       
+<div class="input-group">
+   <input type="file" class="form-control" name="uploadFile" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+   <button class="btn btn-primary" type="submit" id="inputGroupFileAddon04">파일업로드</button>
+ </div>       
+ 
+     
+</form>
+
+</div>
+</div>
+
+   
+   
+     {{>layout/footer}}
+</body>
+</html>
+

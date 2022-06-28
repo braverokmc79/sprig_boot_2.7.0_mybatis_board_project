@@ -1,11 +1,17 @@
 package kr.net.macaronics.configuration;
 
+import java.nio.charset.Charset;
 import java.util.List;
+
+import javax.servlet.Filter;
 
 import kr.net.macaronics.configuration.handler.BaseHandlerInterceptor;
 import org.springframework.boot.web.servlet.view.MustacheViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -17,20 +23,34 @@ import kr.net.macaronics.utils.pagination.MySQLPageRequestHandleMethodArgumentRe
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
+	
+//	@Bean
+//	public HttpMessageConverter<String> responseBodyConverter() {
+//		return new StringHttpMessageConverter(Charset.forName("UTF-8"));
+//	}
+//
+//	@Bean
+//	public Filter characterEncodingFilter() {
+//		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+//		characterEncodingFilter.setEncoding("UTF-8");
+//		characterEncodingFilter.setForceEncoding(true);
+//		return characterEncodingFilter;
+//	}
+//	
 	/**
 	 * 머시태시 템플릿을 html 확장자 명으로 변경
 	 */
-	@Override
-	public void configureViewResolvers(ViewResolverRegistry registry) {
-		MustacheViewResolver resolver = new MustacheViewResolver();
-
-		resolver.setCharset("UTF-8");
-		resolver.setContentType("text/html;charset=UTF-8");
-		resolver.setPrefix("classpath:/templates/");
-		resolver.setSuffix(".html");
-
-		registry.viewResolver(resolver);
-	}
+//	@Override
+//	public void configureViewResolvers(ViewResolverRegistry registry) {
+//		MustacheViewResolver resolver = new MustacheViewResolver();
+//
+//		resolver.setCharset("UTF-8");
+//		resolver.setContentType("text/html;charset=UTF-8");
+//		resolver.setPrefix("classpath:/templates/");
+//		resolver.setSuffix(".html");
+//
+//		registry.viewResolver(resolver);
+//	}
 
 	/**
 	 * Locale 값이 변경되면 인터셉터가 동작한다. url의 query parameter에 지정한 값이 들어올 때 동작한다. ex)
