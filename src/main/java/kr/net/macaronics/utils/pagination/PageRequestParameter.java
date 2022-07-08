@@ -1,15 +1,17 @@
 package kr.net.macaronics.utils.pagination;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /** 페이지 요청정보 파라미터 정보 */
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@ToString
 public class PageRequestParameter<T> {
 
 	private MySQLPageRequest pageRequest;

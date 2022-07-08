@@ -8,7 +8,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.net.macaronics.annotation.RequestConfig;
-import kr.net.macaronics.configuration.http.BaseException;
+import kr.net.macaronics.configuration.exception.BaseException;
 import kr.net.macaronics.configuration.http.BaseResponseCode;
 import lombok.extern.slf4j.Slf4j;
 

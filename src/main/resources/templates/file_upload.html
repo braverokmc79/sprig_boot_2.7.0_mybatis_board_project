@@ -2,30 +2,74 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
-{{>layout/head}}   
+<title>파일업로드 테스트</title> 
+{{>layout/head}}
+<link rel="stylesheet" href="/css/file_upload.css"  >
 </head>
 <body>
 
 
-<div class="row mt-5">
-<div class="col-md-3 offset-md-2 text-center">
-<form action="/file/save" enctype="multipart/form-data" method="post">
-       
-<div class="input-group">
-   <input type="file" class="form-control" name="uploadFile" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-   <button class="btn btn-primary" type="submit" id="inputGroupFileAddon04">파일업로드</button>
- </div>       
- 
-     
-</form>
+	<div class="row mt-5" id="file-upload-container">
+		<div class="col-md-4 offset-md-2 text-center">
 
-</div>
-</div>
+			<div class="mb-5 d-flex justify-content-end">
+				<a class="btn btn-info text-white" href="fileList">파일목록</a>
+			</div>
+			<h2>1.파일 업로드 테스트</h2>
+			<form action="/file/save" enctype="multipart/form-data" method="post">
+				<div class="input-group">
+					<input type="file" class="form-control" name="uploadFile" id="uploadFile1" data-view="image_container1" onchange="setThumbnail(event);">
+					<button class="btn btn-primary" type="button" id="uploadBtn1">파일업로드</button>
+				</div>
+			</form>
+			<br>
+			<div class="imgView" id="image_container1"></div>
 
-   
-   
-     {{>layout/footer}}
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<h2>2.파일 업로드 테스트2</h2>
+			<form action="/file/fileSave" enctype="multipart/form-data" method="post">
+				<div class="input-group">
+					<input type="file" class="form-control" name="uploadFile" id="uploadFile2" data-view="image_container2" onchange="setThumbnail(event);">
+					<button class="btn btn-primary" type="button" id="uploadBtn2">파일업로드</button>
+				</div>
+			</form>
+			<br>
+			<div class="imgView" id="image_container2"></div>
+
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<h2>3.멀티 파일 업로드 테스트</h2>
+			<form action="/file/fileSave" enctype="multipart/form-data" method="post">
+				<div class="input-group">
+					<input type="file" class="form-control" name="uploadFile" id="uploadFile3" data-view="image_container3" onchange="setThumbnail(event);" multiple>
+					<button class="btn btn-primary" type="button" id="uploadBtn3">파일업로드</button>
+				</div>
+			</form>
+			<br>
+			<div class="imgView" id="image_container3"></div>
+
+
+		</div>
+	</div>
+
+	{{>layout/footer}}
+
+
+
+	<script src="/js/file_upload.js"></script>
+
+
 </body>
 </html>
 

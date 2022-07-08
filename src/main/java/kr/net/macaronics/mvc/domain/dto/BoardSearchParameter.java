@@ -4,8 +4,10 @@ import java.util.List;
 
 import kr.net.macaronics.mvc.domain.enums.BoardTypeInsert;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class BoardSearchParameter {	
 	
 	private String keyword;

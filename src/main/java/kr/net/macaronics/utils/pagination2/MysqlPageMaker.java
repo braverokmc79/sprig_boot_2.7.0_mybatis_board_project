@@ -1,7 +1,5 @@
 package kr.net.macaronics.utils.pagination2;
 
-import java.util.List;
-
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -10,15 +8,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import kr.net.macaronics.mvc.domain.enums.BoardTypeInsert;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
  
 /** MySQL PageMaker **/
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
-@Builder
 @ToString
 public class MysqlPageMaker {
 	
@@ -60,12 +58,10 @@ public class MysqlPageMaker {
     private int tempEndPage; //마지막 페이지
      
     /** 검색처리 추가 */
-    private String searchType;
+    private String searchType;  //NOTICE, FAQ,INQUIRY	
     private String keyword;
      
-     
-    private List<BoardTypeInsert> boardTypes;  //배열로 다중 검색 처리를 위해 , NOTICE, FAQ,INQUIRY	
-    
+
     
     public MysqlPageMaker() {
         this.page=1;          //초기 페이지는 1 

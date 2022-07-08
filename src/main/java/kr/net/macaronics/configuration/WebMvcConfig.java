@@ -1,57 +1,28 @@
 package kr.net.macaronics.configuration;
 
-import java.nio.charset.Charset;
 import java.util.List;
 
-import javax.servlet.Filter;
-
-import kr.net.macaronics.configuration.handler.BaseHandlerInterceptor;
-import org.springframework.boot.web.servlet.view.MustacheViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
+import kr.net.macaronics.configuration.handler.BaseHandlerInterceptor;
 import kr.net.macaronics.utils.pagination.MySQLPageRequestHandleMethodArgumentResolver;
+import lombok.extern.slf4j.Slf4j;
 
 @Configuration
+@Slf4j
 public class WebMvcConfig implements WebMvcConfigurer {
 
+		
+	private static final String WINDOW_FILE ="file:///";
+	private static final String LINUX_FILE= "file:";
 	
-//	@Bean
-//	public HttpMessageConverter<String> responseBodyConverter() {
-//		return new StringHttpMessageConverter(Charset.forName("UTF-8"));
-//	}
-//
-//	@Bean
-//	public Filter characterEncodingFilter() {
-//		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-//		characterEncodingFilter.setEncoding("UTF-8");
-//		characterEncodingFilter.setForceEncoding(true);
-//		return characterEncodingFilter;
-//	}
-//	
-	/**
-	 * 머시태시 템플릿을 html 확장자 명으로 변경
-	 */
-//	@Override
-//	public void configureViewResolvers(ViewResolverRegistry registry) {
-//		MustacheViewResolver resolver = new MustacheViewResolver();
-//
-//		resolver.setCharset("UTF-8");
-//		resolver.setContentType("text/html;charset=UTF-8");
-//		resolver.setPrefix("classpath:/templates/");
-//		resolver.setSuffix(".html");
-//
-//		registry.viewResolver(resolver);
-//	}
-
+	
 	/**
 	 * Locale 값이 변경되면 인터셉터가 동작한다. url의 query parameter에 지정한 값이 들어올 때 동작한다. ex)
 	 * http://localhost:8080?lang=ko
@@ -118,8 +89,65 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	}
 	
 	@Bean
-	public GlobalConfig globalConfig(){
+	public GlobalConfig config(){
 		return new GlobalConfig();
 	}
 	
+	
+	
+/**	 addResourceHandlers 설명)
+WebMvcConfigurer interface를 상속받아 addResourceHandlers method를 오버 라이딩하고 리소스 등록 및 핸들러를 관리하는 
+객체인 ResourceHandlerRegistry를 통해 리소스의 위치와 리소스와 매칭 될 url을 설정.
+
+addResourceHandler : 리소스와 연결될 URL path를 지정(클라이언트가 파일에 접근하기 위해 요청하는 url)
+localhost:8080/imagePath/** 
+
+addResourceLocations: 실제 리소스가 존재하는 외부 경로를 지정합니다.
+경로의 마지막은 반드시 " / "로 끝나야 하고, 로컬 디스크 경로일 경우 file:/// 접두어를 꼭 붙인다.
+ 
+이렇게 설정하면 클라이언트로부터 http://호스트 주소:포트/imagePath/testImage.jpg 와 같은 요청이 들어 왔을 때 /home/uploadedImage/testImage.jpg 파일로 연결.
+ 
+ 예)
+	private String connectPath = "/imagePath/**";
+	private String resourcePath = "file:///home/uploadedImage";
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler(connectPath)
+                .addResourceLocations(resourcePath);
+    }
+*/
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		//업로드 파일 static resource 접근 경로
+		String resourcePattern=config().getUploadResourcePath() +"**";
+		log.info("addResourceHandlers  -resourcePattern   {}", resourcePattern);
+		
+		
+		if(config().isLocal()) {
+			//로컬(윈도우환경)			
+			registry.addResourceHandler(resourcePattern)
+			.addResourceLocations(WINDOW_FILE+config().getUploadFilePath());
+			log.info("윈도우 환경");
+			log.info(" resourcePattern -  {}", resourcePattern);
+			log.info(" addResourceLocations -  {}", WINDOW_FILE+config().getUploadFilePath() );
+		}if(config().isDev()) {
+			//개발환경(윈도우환경)
+			log.info("개발환경(윈도우환경)");
+			registry.addResourceHandler(resourcePattern)
+			.addResourceLocations(WINDOW_FILE+config().getUploadFilePath());
+			log.info(" resourcePattern -  {}", resourcePattern);
+			log.info(" addResourceLocations -  {}", WINDOW_FILE+config().getUploadFilePath() );
+		}else {
+			//리눅스 또는 유닉스 환경
+			log.info("리눅스 또는 유닉스 환경");
+			registry.addResourceHandler(resourcePattern)
+			.addResourceLocations(LINUX_FILE+config().getUploadFilePath());
+		}				
+	}
+	
 }
+
+
+

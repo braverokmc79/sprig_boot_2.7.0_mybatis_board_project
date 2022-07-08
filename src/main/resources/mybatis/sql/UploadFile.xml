@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.net.macaronics.mvc.repository.UploadFileRepository">
+  
+
+	 <insert id="save" parameterType="kr.net.macaronics.mvc.domain.dto.UploadFileInsertDTO" useGeneratedKeys="true" keyProperty="uploadFileSeq">
+	 		INSERT INTO T_UPLOAD_FILE
+			
+			(BOARD_SEQ , BOARD_TYPE ,PATHNAME, FILENAME, ORIGINAL_FILENAME, `SIZE`, CONTENT_TYPE, RESOURCE_PATHNAME , THUMBNAIL_PATHNAME, THUMBNAIL_RESOURCE_PATHNAME)
+			
+			VALUES(#{boardSeq}, #{boardType}, #{pathname}, #{filename}, #{originalFilename}, 
+			
+			#{size}, #{contentType}, #{resourcePathname} , #{thumbnailPathname}, #{thumbnailResourcePathname}) 		
+	 </insert>
+
+
+	<select id="get" resultType="kr.net.macaronics.mvc.domain.dto.UploadFileDTO">
+			SELECT 
+				UPLOAD_FILE_SEQ , BOARD_SEQ, BOARD_TYPE, PATHNAME, FILENAME, ORIGINAL_FILENAME, `SIZE`, CONTENT_TYPE, 
+				RESOURCE_PATHNAME ,	THUMBNAIL_PATHNAME, THUMBNAIL_RESOURCE_PATHNAME,	 REG_DATE
+			FROM T_UPLOAD_FILE UF	
+			WHERE UF.UPLOAD_FILE_SEQ =#{uploadFileSeq}		
+	</select>
+
+
+
+	<select id="fileList" resultType="kr.net.macaronics.mvc.domain.dto.UploadFileDTO" parameterType="java.util.HashMap">		
+		 SELECT 
+		 		 UPLOAD_FILE_SEQ, 
+				 BOARD_SEQ, 
+				 BOARD_TYPE, 
+				 PATHNAME,
+				 FILENAME, 
+				 ORIGINAL_FILENAME, 
+				 `SIZE`, 
+				 CONTENT_TYPE, 
+				 RESOURCE_PATHNAME, 
+				 THUMBNAIL_PATHNAME, 
+				 THUMBNAIL_RESOURCE_PATHNAME,
+				 REG_DATE
+		FROM T_UPLOAD_FILE U
+		
+		<include refid="searchSql"></include>
+		
+		ORDER BY U.REG_DATE DESC     
+		LIMIT #{pageMaker.pageStart} , #{pageMaker.perPageNum}
+	</select>
+
+
+	
+	 <sql id="searchSql" >
+       <where>
+	   	 <if test='boardSeq !=null and !boardSeq.equals("")'>
+	   	 	AND U.BOARD_SEQ = #{boardSeq}
+	   	 </if> 
+	   	 
+		  <if test="@org.apache.commons.lang3.StringUtils@isNotEmpty(searchType)">
+		  		
+		   		<if test="searchType == 'NOTICE'.toString()">
+		   			AND  U.BOARD_TYPE ='NOTICE'
+		   		</if>
+	
+		   		<if test="searchType == 'FAQ'.toString()">
+		   			AND  U.BOARD_TYPE ='FAQ'
+		   		</if>
+		   		
+		   		<if test="searchType == 'INQUIRY'.toString()">
+		   			AND  U.BOARD_TYPE ='INQUIRY'
+		   		</if>
+		   			   			   			   		
+		   	 </if> 
+	   	 
+	   </where>       
+    </sql>
+	
+	
+	<select id="getTotalCount" resultType="int" parameterType="java.util.HashMap">	
+		SELECT
+		 	 COUNT(U.UPLOAD_FILE_SEQ) AS CNT    	 
+		FROM T_UPLOAD_FILE  U
+		
+		<include refid="searchSql"></include>
+	</select>
+
+
+
+
+
+
+	<select id="bordPkFileList" resultType="kr.net.macaronics.mvc.domain.dto.UploadFileDTO">		
+		 SELECT 
+		 		 UPLOAD_FILE_SEQ, 
+				 BOARD_SEQ, 
+				 BOARD_TYPE, 
+				 PATHNAME,
+				 FILENAME, 
+				 ORIGINAL_FILENAME, 
+				 `SIZE`, 
+				 CONTENT_TYPE, 
+				 RESOURCE_PATHNAME, 
+				 THUMBNAIL_PATHNAME, 
+				 THUMBNAIL_RESOURCE_PATHNAME,
+				 REG_DATE
+		FROM T_UPLOAD_FILE U
+		
+		<include refid="searchSql"></include>
+		
+		ORDER BY U.REG_DATE DESC     
+		LIMIT #{pageMaker.pageStart} , #{pageMaker.perPageNum}
+	</select>
+
+
+
+	<delete id="fileDelete">
+		DELETE FROM T_UPLOAD_FILE WHERE UPLOAD_FILE_SEQ =#{uploadFileSeq}
+	</delete>
+
+
+
+	<select id="fileSelectList"  resultType="kr.net.macaronics.mvc.domain.dto.UploadFileDTO">
+	
+		SELECT * FROM T_UPLOAD_FILE
+		
+		WHERE  UPLOAD_FILE_SEQ IN(		
+		  <foreach collection="uploadFileSeq" item="value" separator=",">
+   	 			#{value}
+   	 	  </foreach>
+   	 	 ) 
+	</select>
+
+</mapper>
+

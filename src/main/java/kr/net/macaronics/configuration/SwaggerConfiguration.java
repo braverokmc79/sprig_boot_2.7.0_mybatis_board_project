@@ -15,6 +15,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfiguration {
 	
+
+	/**    Swagger2 설정 및 사용
+ 		https://lovon.tistory.com/101
+	*/	
 	@Bean
 	public Docket docker() {
 		ApiInfoBuilder apiInfo=new ApiInfoBuilder();
@@ -24,8 +28,12 @@ public class SwaggerConfiguration {
 		Docket docket=new Docket(DocumentationType.SWAGGER_2);
 		docket.apiInfo(apiInfo.build());
 				
-		ApiSelectorBuilder apis=docket.select().apis(RequestHandlerSelectors.basePackage("kr.net.macaronics.mvc.controller"));
-		apis.paths(PathSelectors.ant("/**"));
+		ApiSelectorBuilder apis=docket.select()
+
+		//.apis(RequestHandlerSelectors.basePackage("kr.net.macaronics.mvc.controller"));
+        .apis(RequestHandlerSelectors.any()) // 현재 RequestMapping으로 할당된 모든 URL 리스트를 추출
+        .paths(PathSelectors.ant("/api/**")); // 그중 /api/** 인 URL들만 필터링
+		//apis.paths(PathSelectors.ant("/**"));
 		
 		return apis.build();				
 	}

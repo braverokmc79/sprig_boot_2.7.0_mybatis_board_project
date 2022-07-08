@@ -4,11 +4,14 @@ import kr.net.macaronics.mvc.domain.enums.BoardType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
-/** 데이터를 가져올시 파라미터 */
-@Data
+/** 게시판 데이터를 가져올시 파라미터 */
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

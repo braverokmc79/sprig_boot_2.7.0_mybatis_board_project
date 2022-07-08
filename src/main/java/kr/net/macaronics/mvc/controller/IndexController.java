@@ -14,10 +14,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import kr.net.macaronics.mvc.domain.enums.BoardType;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-//@Api(tags="인덱스 API")
 @Slf4j
 public class IndexController {
 
@@ -32,7 +32,7 @@ public class IndexController {
 	
 	
 	
-	
+	/** 다국어 테스트 */
 	@GetMapping("/i18n")
 	@ResponseBody
 	@ApiOperation(value="다국어테스트", notes="다국어테스트 입니다.")
@@ -47,17 +47,10 @@ public class IndexController {
 		String code="login.info.error";
 		String message =messageSource.getMessage(code, null, LocaleContextHolder.getLocale());  
 		log.info("message  : {} " , message);
+		BoardType.values();
 		
 		String message2=messageSource.getMessage("testName", new String[]{name ,age}, LocaleContextHolder.getLocale());
 		return message2;
-	}
-	
-	
-	
-	
-	@GetMapping("/fileUpload")
-	public String fileUpload() {
-		return "file_upload";
 	}
 	
 	

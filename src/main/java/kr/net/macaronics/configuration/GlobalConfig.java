@@ -27,16 +27,13 @@ public class GlobalConfig {
 	@Autowired
 	private ResourceLoader resourceLoader;		
 	
-	private String uploadFilePath;
-	
-	private String schedulerCronExample1;
-	
-	
+	private String uploadFilePath;//파일 저장 경로	
+	private String schedulerCronExample1;//스케쥴처리
+	private String uploadResourcePath;//웹 브라우저 출력시 업로드파일경로
+		
 	private boolean local;
 	private boolean dev;
 	private boolean prod;
-	
-	
 	
 	
 	/**
@@ -65,7 +62,7 @@ public class GlobalConfig {
 			Properties properties=PropertiesLoaderUtils.loadProperties(resource);
 			this.uploadFilePath=properties.getProperty("uploadFile.path");
 			this.schedulerCronExample1 =properties.getProperty("scheduler.cron.example1");
-			
+			this.uploadResourcePath=properties.getProperty("uploadFile.resourcePath");
 			this.local=activeProfile.equals("local");
 			this.dev=activeProfile.equals("dev");
 			this.prod=activeProfile.equals("prod");
@@ -78,9 +75,6 @@ public class GlobalConfig {
 	
 	
 	
-	public String getUploadFilePath() {
-		return uploadFilePath;
-	}
-	
+
 	
 }

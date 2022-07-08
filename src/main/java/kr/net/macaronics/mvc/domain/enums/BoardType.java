@@ -14,7 +14,8 @@ public enum BoardType {
  
     NOTICE("NOTICE", "공지사항"),
     FAQ("FAQ" ,"자주묻는질문"),
-    INQUIRY("INQUIRY" ,"1:1문의")
+    INQUIRY("INQUIRY" ,"1:1문의"),
+    NONE("none","디폴트값")
     ;
          
     /** 한개의 데이터만 가져올경우 @JsonFormat 제거후 해당 변수에 @JsonValue 어노테이션 추가

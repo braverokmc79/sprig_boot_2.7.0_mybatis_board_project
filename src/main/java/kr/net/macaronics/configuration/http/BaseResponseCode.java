@@ -8,9 +8,12 @@ public enum BaseResponseCode {
 	SUCCESS(200), // 성공
 	ERROR(500), // 실패
 	LOGIN_REQUIRED(403), 
-	DATA_IS_NULL, 
+	NOT_FOUND(404),
+	DATA_IS_NULL,
+	IllegalArgumentException(404),
+	UPLOAD_FILE_IS_NULL,	
 	VALIDATE_REQUIRED;
-
+	
 	private int status;
 
 	BaseResponseCode(int status) {

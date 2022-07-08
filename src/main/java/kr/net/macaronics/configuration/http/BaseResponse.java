@@ -7,7 +7,9 @@ import lombok.Data;
 @Data
 public class BaseResponse<T> {
 
-	private String status=BaseResponseCode.SUCCESS.name();
+	/** success 또는 error 값만 반환  기본 설정 error */
+	private String resState="success";
+	
 	private BaseResponseCode code;
 	private String message;
 	private MysqlPageMakerResponse pageMaker;
@@ -31,16 +33,34 @@ public class BaseResponse<T> {
 	}
 
 
-	public BaseResponse(String status, String code, String message) {		
-		this.status=status;
-		this.code =BaseResponseCode.valueOf(code);	
+	public BaseResponse(String resState, String code, String message) {		
+		this.resState=resState;
+		try {
+			this.code =BaseResponseCode.valueOf(code);	
+		}catch (Exception e) {
+			this.code=null;
+		}			
+		this.message=message;				
+	}
+	
+	
+	public BaseResponse(String resState, BaseResponseCode code, String message) {		
+		this.resState=resState;
+		this.code=code;		
 		this.message=message;				
 	}
 
+
 	
+	public BaseResponse(String resState, String message) {		
+		this.resState=resState;	
+		this.message=message;				
+	}
+
+
 	
-	public BaseResponse(String status, T data, String message) {
-		if(status.equals("error"))this.code=BaseResponseCode.ERROR;		
+	public BaseResponse(String resState, T data, String message) {
+		if(resState.equals("error"))this.code=BaseResponseCode.ERROR;		
 		else this.code=BaseResponseCode.SUCCESS;
 		this.data=data;
 		this.message=message;

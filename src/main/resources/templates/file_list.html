@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{>layout/head}}
+<title>파일목록</title>
+<link rel="stylesheet" href="/css/file_upload.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-12  text-center">
+
+				<div class="mb-5 d-flex justify-content-end">
+					<a class="btn btn-info text-white" href="fileUpload">파일등록</a>
+				</div>
+
+
+				<table class="table table-striped" id="fileUpload">
+					<thead>
+						<tr>
+							<th colspan="8">
+								<div id="displayCount" class="d-flex justify-content-end"></div>
+							</th>
+						</tr>
+					</thead>
+					<thead>
+						<tr>
+							<th>upload_file_seq</th>
+							<th>thumbnail_resource_pathname</th>
+							<th>board_seq</th>
+							<th>board_type</th>
+							<th>filename</th>
+							<th>original_filename</th>
+							<th>reg_date</th>
+							<th>삭제</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-center" colspan="8">등록된 데이터가 없습니다.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<ul id="pagingul">
+				</ul>
+
+			</div>
+		</div>
+
+
+		
+	</div>
+
+	{{>layout/footer}}
+
+<script src="/js/file_list.js"></script>
+
+
+</body>
+</html>
+
+

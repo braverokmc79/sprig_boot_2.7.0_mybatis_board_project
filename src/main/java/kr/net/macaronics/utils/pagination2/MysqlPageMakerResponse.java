@@ -3,10 +3,13 @@ package kr.net.macaronics.utils.pagination2;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 /** 반환 처리시 */
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @ToString
 @Builder

@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-/** 등록/수정시 파라미터 */
+/** 게시판 등록/수정시 파라미터 */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
