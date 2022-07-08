@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Example</title>
+</head>
+<body>
+
+
+<h1>example6</h1>
+<textarea  style="width: 250px; height: 250px"></textarea> 
+<br>
+<button type="button" onclick="dataSubmit()">데이터 전송</button>
+
+<script>
+
+
+function dataSubmit(){
+	 const json={
+			user:{
+				name:"이순신",
+				age :24,
+				address:"대한민국"
+			}	
+		}
+
+		fetch("/example/parameter/example7/saveData",{
+			method:"POST",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			body:JSON.stringify(json)
+		})
+		.then((response)=>response.json())
+		.then((res)=>{
+			console.log(res);
+			document.querySelector("textarea").value=JSON.stringify(res, null, 4);
+		}).catch((error)=>{	
+			console.log("error :  {}", error);
+		});
+		
+}
+
+
+</script>
+
+
+</body>
+</html>
