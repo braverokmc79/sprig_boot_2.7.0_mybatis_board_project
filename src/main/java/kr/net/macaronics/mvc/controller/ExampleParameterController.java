@@ -85,7 +85,7 @@ public class ExampleParameterController {
 	
 	
 	/**
-	 * example6 json Form 
+	 * example6 json Form 페이지 이동
 	 */
 	@GetMapping("/example6/form")
 	public String example6() {
@@ -111,7 +111,7 @@ public class ExampleParameterController {
 	
 	
 	/**
-	 * example7 json Form 
+	 * example7 json Form  페이지 이동
 	 */
 	@GetMapping("/example7/form")
 	public String example7Form() {
