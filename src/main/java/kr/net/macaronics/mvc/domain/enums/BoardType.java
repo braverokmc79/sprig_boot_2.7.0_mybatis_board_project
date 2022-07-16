@@ -11,7 +11,8 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum BoardType {
- 
+	
+	COMMUNITY("COMMUNITY","커뮤니티"),
     NOTICE("NOTICE", "공지사항"),
     FAQ("FAQ" ,"자주묻는질문"),
     INQUIRY("INQUIRY" ,"1:1문의"),

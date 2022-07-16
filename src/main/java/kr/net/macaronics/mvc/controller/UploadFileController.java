@@ -13,14 +13,14 @@ public class UploadFileController {
 	/** 파일업로드 테스트 페이지 */
 	@GetMapping("/fileUpload")
 	public String fileUpload() {
-		return "file_upload";
+		return "uploadFile/file_upload";
 	}
 	
 	
 	/** 파일 목록 페이지 */
 	@GetMapping("/fileList")
 	public String fileList() {
-		return "file_list";
+		return "uploadFile/file_list";
 	}
 	
 }
